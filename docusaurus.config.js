@@ -44,7 +44,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/gincoat/gincoat.github.io/tree/master/src',
+            'https://github.com/gincoat/gincoat.github.io/edit/source',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
