@@ -13,6 +13,8 @@ lets assume the request is of a type `get` and will be made to the root `/` and 
 ```
 
 Let's start by defining the handler function for the request, to do that first create a file with the name `example.go` in `httpd/handlers` folder and then add to it the following code:
+
+file path: `httpd/handlers/example.go`
 ```go
 package handlers
 

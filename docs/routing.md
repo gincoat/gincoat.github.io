@@ -2,11 +2,12 @@
 title: Routing
 ---
 
-all routes are defined in the `httpd/routes.go` file, a typical route consist of three main parts, the
-1- the HTTP method, could be `get`, `post`, `put`...etc
-2- the path 
-3- the handler function 
-here is an example of a route to handle `get` request to the path `/todos` with a handler function named `showTodos`
+All routes are defined in the `httpd/routes.go` file, a typical route consist of three main parts:
+
+1. the HTTP method, could be `get`, `post`, `put`...etc
+2. the path 
+3. the handler function
+Here is an example of a route to handle `get` request to the path `/todos` with a handler function named `showTodos`
 ```go
 router.Get("/todos", handlers.ShowTodos)
 ```

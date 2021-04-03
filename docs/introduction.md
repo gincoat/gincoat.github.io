@@ -25,7 +25,7 @@ The architecture is similar to `MVC` architecture, there is a `routes.go` file w
 ## Install
 To create a new Gincoat project you need to install the `Gincoat cli` first
 
-#### Install Via `Gincoat cli`
+#### Install Gincoat cli
 To install the `Gincoat cli` open up your terminal and run the following command:
 ```bash
 go get github.com/gincoat/installer/gincoat
@@ -34,7 +34,7 @@ go get github.com/gincoat/installer/gincoat
 #### Create a new project:
 The command for creating a new project is the following:
 ```bash
-gincoat new [project-name] [project-repository]
+gincoat new [project-name] [project-location]
 ```
 where:
 `project-name` is the name of your project

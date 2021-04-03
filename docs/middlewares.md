@@ -47,7 +47,8 @@ var AfterExample gin.HandlerFunc = func(c *gin.Context) {
 
 ### Using the middleware
 There are two ways to use the middleware, either globally or per-route
-1- globally
+
+1- global middlewares
 let's register the middleware `BeforeExample` globally, to do that open up the file `httpd/middlewares/registrar.go`, and add `mwEngine.Attach(MiddlewareExample)` to the body of the function `RegisterMiddlewares()` and make sure it looks something like this:
 ```go
 func RegisterMiddlewares() {
@@ -58,12 +59,11 @@ func RegisterMiddlewares() {
 }
 
 ```
-2- Per-route
+
+2- Per-route middlewares
 let's register middleware `AfterMiddleware` for this route `router.Get("/home", handlers.HomeShow)`.
 To do that simply pass the middleware right before the handler, and make sure it looks like this:
 ```go
 router.Get("/update", middlewares.AfterMiddleware, handlers.HomeUpdate)
 ```
-you can use as many middlewares per-route as you want, simply pass them as parameters before the handler
-
-
+you can add as many middlewares per-route as you want, simply pass them as parameters before the handler
