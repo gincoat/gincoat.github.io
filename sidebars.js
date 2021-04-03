@@ -11,7 +11,9 @@ module.exports = {
         'handlers',
         'middlewares',
         'jwt',
-        'package-integrator'
+        'package-integrator',
+        'cache',
+        'gin-context'
       ],
     }
   ],
