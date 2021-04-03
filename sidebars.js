@@ -6,6 +6,7 @@ module.exports = {
       items: [
         'introduction',
         'getting-started',
+        'environment-variables',
         'features-control',
         'routing',
         'handlers',
@@ -13,7 +14,8 @@ module.exports = {
         'jwt',
         'package-integrator',
         'cache',
-        'gin-context'
+        'gin-context',
+        'TLS'
       ],
     }
   ],
