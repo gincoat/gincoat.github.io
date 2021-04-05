@@ -11,6 +11,7 @@ module.exports = {
         'routing',
         'handlers',
         'request-data',
+        'validation',
         'middlewares',
         'jwt',
         'package-integrator',
