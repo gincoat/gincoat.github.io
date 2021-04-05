@@ -19,12 +19,14 @@ file path: `httpd/handlers/example.go`
 package handlers
 
 import (
-"github.com/gin-gonic/gin"
+	"net/http"
+	
+	"github.com/gin-gonic/gin"
 )
 
 func ExampleShow(c *gin.Context) {
     message := "Hello from example handler!"
-    c.JSON(200, gin.H{
+    c.JSON(http.StatusOK, gin.H{
         "message": message,
     })
 }

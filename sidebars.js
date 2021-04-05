@@ -10,12 +10,13 @@ module.exports = {
         'features-control',
         'routing',
         'handlers',
+        'request-data',
         'middlewares',
         'jwt',
         'package-integrator',
         'cache',
         'gin-context',
-        'TLS'
+        'tls'
       ],
     }
   ],

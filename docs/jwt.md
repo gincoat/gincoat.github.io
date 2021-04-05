@@ -15,6 +15,15 @@ func JwtTokenCreate(c *gin.Context) {
 	token, err := jwt.CreateToken(payload)
 }
 ```
+### Extract authorization token from header
+to extract the token you use the method `jwt.ExtractToken(context)` it accepts the context variable, it assumes the token is set in the header with the key `Authorization` and the value is in this format `bearer: your-token-here`, here is how you can do it:
+```go
+func JwtTokenCreate(c *gin.Context) {
+	jwt := c.MustGet(core.JWT).(*jwtloader.JwtLoader)
+
+	token, error := jwt.ExtractToken(c)
+}
+```
 
 ### Decode a token
 To decode a token and extract the encoded information, you can do it like below:
