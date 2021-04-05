@@ -56,8 +56,8 @@ export default function Home() {
   const {siteConfig = {}} = context;
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`A golang framework based on Gin for building modern APIs`}
+      description="Gincoat is a golang web framework with an MVC like architecture, it's based on Gin framework, it provides you with an easy-to-use directory structure with a development experience similar to Laravel, made for developing modern APIs and microservices.">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
