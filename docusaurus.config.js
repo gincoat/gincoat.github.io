@@ -14,7 +14,7 @@ module.exports = {
       title: 'Gincoat',
       logo: {
         alt: 'gincoat Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         {
