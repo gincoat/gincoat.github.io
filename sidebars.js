@@ -13,6 +13,7 @@ module.exports = {
         'request-data',
         'validation',
         'middlewares',
+        'redirect',
         'jwt',
         'package-integrator',
         'cache',
