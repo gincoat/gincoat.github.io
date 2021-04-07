@@ -57,7 +57,7 @@ export default function Home() {
   return (
     <Layout
       title={`A golang framework based on Gin for building modern APIs`}
-      description="Condor is a golang web framework with an MVC like architecture, it's based on Gin framework, it provides you with an easy-to-use directory structure with a development experience similar to Laravel, made for developing modern APIs and microservices.">
+      description="GoCondor is a golang web framework with an MVC like architecture, it's based on Gin framework, it provides you with an easy-to-use directory structure with a development experience similar to Laravel, made for developing modern APIs and microservices.">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>

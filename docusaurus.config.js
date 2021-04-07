@@ -11,9 +11,9 @@ module.exports = {
   projectName: 'gocondor.github.io', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'Condor',
+      title: 'GoCondor',
       logo: {
-        alt: 'Condor Logo',
+        alt: 'GoCondor Logo',
         src: 'img/logo.png',
       },
       items: [
@@ -24,7 +24,7 @@ module.exports = {
           position: 'left',
         },
         {
-          href: 'https://github.com/gocondor/condor',
+          href: 'https://github.com/gocondor/gocondor',
           label: 'GitHub',
           position: 'right',
         },
@@ -33,7 +33,7 @@ module.exports = {
     footer: {
       style: 'dark',
       links: [],
-      copyright: `Copyright © ${new Date().getFullYear()} Condor.`,
+      copyright: `Copyright © ${new Date().getFullYear()} GoCondor.`,
     },
   },
   presets: [

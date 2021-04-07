@@ -2,7 +2,7 @@ module.exports = {
   docs: [
     {
       type: 'category',
-      label: 'Condor Docs',
+      label: 'GoCondor Docs',
       items: [
         'introduction',
         'getting-started',
