@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://gincoat.github.io/blog</id>
-    <title>Gincoat Blog</title>
+    <id>https://condor.github.io/blog</id>
+    <title>Condor Blog</title>
     <updated>2015-10-25T23:29:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://gincoat.github.io/blog"/>
-    <subtitle>Gincoat Blog</subtitle>
-    <icon>https://gincoat.github.io/img/favicon.ico</icon>
+    <link rel="alternate" href="https://condor.github.io/blog"/>
+    <subtitle>Condor Blog</subtitle>
+    <icon>https://condor.github.io/img/favicon.ico</icon>
 </feed>
