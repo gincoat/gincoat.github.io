@@ -3,7 +3,7 @@ title: Introduction
 slug: /
 ---
 
-Gincoat is a golang web framework with an `MVC` like architecture, it's based on [Gin framework](https://github.com/gin-gonic/gin), it provides you with an easy-to-use directory structure for your next project, it has a development experience similar to Laravel, made for developing modern APIs and microservices.
+Condor is a golang web framework with an `MVC` like architecture, it's based on [Gin framework](https://github.com/gin-gonic/gin), it provides you with an easy-to-use directory structure for your next project, it has a development experience similar to Laravel, made for developing modern APIs and microservices.
 
 ## Features 
 - Router
@@ -23,18 +23,18 @@ The architecture is similar to `MVC` architecture, there is a `routes.go` file w
 `Request -> Routing -> Middleware -> Handler -> Middleware -> Json Response`
 
 ## Install
-To create a new Gincoat project you need to install the `Gincoat cli` first
+To create a new Condor project you need to install the `Condor cli` first
 
-#### Install Gincoat cli
-To install the `Gincoat cli` open up your terminal and run the following command:
+#### Install Condor cli
+To install the `Condor cli` open up your terminal and run the following command:
 ```bash
-go get github.com/gincoat/installer/gincoat
+go get github.com/gocondor/installer/condor
 ```
 
 #### Create a new project:
 The command for creating a new project is the following:
 ```bash
-gincoat new [project-name] [project-location]
+condor new [project-name] [project-location]
 ```
 where:
 `project-name` is the name of your project
@@ -42,12 +42,12 @@ where:
 
 Now let's create a project with the name `todo` and let's assume it's hosted on github.com in an organization with the name `my-organization`, here is the command to create that
 ```bash
-gincoat new todo github.com/my-organization/todo
+condor new todo github.com/my-organization/todo
 ```
 
 ## Directory structure 
 ```bash
-├── gincoat
+├── condor
 │   ├── config/ ---------------> control what features to turn on
 │   ├── httpd/-----------------> http related code
 │   │   ├── handlers/ --------------> contains your http requests handlers

@@ -2,7 +2,7 @@
 title: JWT Tokens
 ---
 
-JWT tokens are used for authentication, Gincoat provides you with ways to generate `jwt tokens`, `refresh tokens` and a way to validate them
+JWT tokens are used for authentication, Condor provides you with ways to generate `jwt tokens`, `refresh tokens` and a way to validate them
 the configuration for JWT can be found in the `.env` file, there is a section for that where you can set the `secret` key and the `validity` of the tokens
 
 ### Generate JWT token

@@ -2,7 +2,7 @@
 title: Cache
 ---
 
-Gincoat uses `Redis` for cache, to enable the cache features to set the attribute`Cache` to in `config/features.go` to `true`, then add Redis connection information in the `.env` file.
+Condor uses `Redis` for cache, to enable the cache features to set the attribute`Cache` to in `config/features.go` to `true`, then add Redis connection information in the `.env` file.
 ```bash
 
 #################################

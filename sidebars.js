@@ -2,7 +2,7 @@ module.exports = {
   docs: [
     {
       type: 'category',
-      label: 'Gincoat Docs',
+      label: 'Condor Docs',
       items: [
         'introduction',
         'getting-started',

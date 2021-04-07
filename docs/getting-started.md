@@ -2,7 +2,7 @@
 title: Getting Started
 ---
 
-First make sure you have `Gincoat cli` installed by running `go get github.com/gincoat/installer/gincoat`, then create a project using the following command `gincoat new [project-name] [project-location]`
+First make sure you have `Condor cli` installed by running `go get github.com/gocondor/installer/condor`, then create a project using the following command `condor new [project-name] [project-location]`
 
 Now Let's create a route to handle our first request.
 lets assume the request is of a type `get` and will be made to the root `/` and the response should be the following:
@@ -42,6 +42,6 @@ func RegisterRoutes() {
 ```
 Next cd into the project folder and start the app by running the following command:
 ```bash
-gincoat run:dev
+condor run:dev
 ```
 Finally, open up your browser and navigate to `localhost:8000`

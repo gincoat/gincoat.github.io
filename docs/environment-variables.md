@@ -6,7 +6,7 @@ Enviroment Variables are defined in the file `.env` at the root, the automatical
 #################################
 ###                           ###
 #################################
-APP_NAME=Gincoat
+APP_NAME=Condor
 APP_MODE=debug  # debug | release | test
 APP_HTTP_HOST=localhost
 APP_HTTP_PORT=8000
@@ -36,7 +36,7 @@ DB_DRIVER=sqlite  # mysql | sqlite
 
 # MYSQL
 MYSQL_HOST=localhost
-MYSQL_DB_NAME=gincoat
+MYSQL_DB_NAME=condor
 MYSQL_PORT=3306
 MYSQL_USERNAME=root
 MYSQL_PASSWORD=

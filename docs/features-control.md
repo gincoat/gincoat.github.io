@@ -8,10 +8,10 @@ it's simply a struct  located in `config/features.go` with attributes of type bo
 package config
 
 import (
-	"github.com/gincoat/core"
+	"github.com/gocondor/core"
 )
 
-// Features to control Gincoat core features
+// Features to control Condor core features
 var Features *core.Features = &core.Features{
 	Database: false, // Database
 	Cache:    false, // Cache

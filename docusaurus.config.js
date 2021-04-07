@@ -1,19 +1,19 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Gincoat',
+  title: 'Condor',
   tagline: 'A Golang Web Framework For Building APIs',
-  url: 'https://gincoat.github.io',
+  url: 'https://condor.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'gincoat', // Usually your GitHub org/user name.
-  projectName: 'gincoat.github.io', // Usually your repo name.
+  organizationName: 'gocondor', // Usually your GitHub org/user name.
+  projectName: 'condor.github.io', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'Gincoat',
+      title: 'Condor',
       logo: {
-        alt: 'gincoat Logo',
+        alt: 'Condor Logo',
         src: 'img/logo.png',
       },
       items: [
@@ -24,7 +24,7 @@ module.exports = {
           position: 'left',
         },
         {
-          href: 'https://github.com/gincoat/gincoat',
+          href: 'https://github.com/gocondor/condor',
           label: 'GitHub',
           position: 'right',
         },
@@ -33,7 +33,7 @@ module.exports = {
     footer: {
       style: 'dark',
       links: [],
-      copyright: `Copyright © ${new Date().getFullYear()} Gincoat.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Condor.`,
     },
   },
   presets: [
@@ -44,7 +44,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/gincoat/gincoat.github.io/edit/source',
+            'https://github.com/gocondor/condor.github.io/edit/source',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
