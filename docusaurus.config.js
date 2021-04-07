@@ -2,13 +2,13 @@
 module.exports = {
   title: 'Condor',
   tagline: 'A Golang Web Framework For Building APIs',
-  url: 'https://condor.github.io',
+  url: 'https://gocondor.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'gocondor', // Usually your GitHub org/user name.
-  projectName: 'condor.github.io', // Usually your repo name.
+  projectName: 'gocondor.github.io', // Usually your repo name.
   themeConfig: {
     navbar: {
       title: 'Condor',
@@ -44,7 +44,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/gocondor/condor.github.io/edit/source',
+            'https://github.com/gocondor/gocondor.github.io/edit/source',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
