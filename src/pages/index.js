@@ -8,29 +8,82 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: 'Simple Like Laravel',
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    title: 'MVC Like architecture',
     description: (
       <>
-        Features an `MVC` like architecture
+        Simple like Laravel
       </>
     ),
   },
   {
-    title: 'Easy to learn',
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    title: 'Based on Gin Framework',
     description: (
       <>
-        Very easy to get started with
+        All Gin features available
       </>
     ),
   },
   {
-    title: 'Based on Gin',
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    title: 'Middlewares',
     description: (
       <>
-        Based on Gin framework
+        Middlewares before and after processing
+      </>
+    ),
+  },
+  {
+    title: 'JWT tokens',
+    description: (
+      <>
+        Generate JWT tokens and refresh tokens
+      </>
+    ),
+  },
+  {
+    title: 'ORM',
+    description: (
+      <>
+        Uses GORM for database
+      </>
+    ),
+  },
+  {
+    title: 'Cache',
+    description: (
+      <>
+        Redis for cache
+      </>
+    ),
+  },
+  {
+    title: 'TLS',
+    description: (
+      <>
+        Easily install ssl certificates
+      </>
+    ),
+  },
+  {
+    title: 'Context Package Integrator',
+    description: (
+      <>
+        Integrate any go package to gin context
+      </>
+    ),
+  },
+  {
+    title: 'Live-Reloading',
+    description: (
+      <>
+        Live-reloading for development
+      </>
+    ),
+  },
+  {
+    title: 'Features Control',
+    description: (
+      <>
+        Turn on/off features
       </>
     ),
   },
