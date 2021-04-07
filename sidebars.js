@@ -18,7 +18,8 @@ module.exports = {
         'package-integrator',
         'cache',
         'gin-context',
-        'tls'
+        'tls',
+        'contribute'
       ],
     }
   ],

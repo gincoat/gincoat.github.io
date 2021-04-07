@@ -1,6 +1,6 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Condor',
+  title: 'GoCondor',
   tagline: 'A Golang Web Framework For Building APIs',
   url: 'https://gocondor.github.io',
   baseUrl: '/',
