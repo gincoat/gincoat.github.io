@@ -6,6 +6,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
+import Icon from "@material-ui/core/Icon";
+
 const features = [
   {
     title: 'MVC Like architecture',
@@ -64,7 +66,7 @@ const features = [
     ),
   },
   {
-    title: 'Let's Encrypt auto certs,
+    title: 'Let\'s Encrypt auto certs',
     description: (
       <>
         Let's Encrypt auto certificates manager
@@ -101,13 +103,16 @@ function Feature({imageUrl, title, description}) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
     <div className={clsx('col col--4', styles.feature)}>
-      {imgUrl && (
-        <div className="text--center">
-          <img className={styles.featureImage} src={imgUrl} alt={title} />
-        </div>
-      )}
+
+    <div  className="text--center">
+      <div className="text--center">
+          <Icon style={{ fontSize: 80, color: 'gray' }}>done</Icon>
+      </div>
+
       <h3>{title}</h3>
       <p>{description}</p>
+    </div>
+
     </div>
   );
 }

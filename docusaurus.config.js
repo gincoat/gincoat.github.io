@@ -1,5 +1,8 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
+  stylesheets: [
+    "https://fonts.googleapis.com/icon?family=Material+Icons",
+  ],
   title: 'GoCondor',
   tagline: 'A Golang Web Framework For Building APIs',
   url: 'https://gocondor.github.io',
