@@ -11,7 +11,7 @@ const features = [
     title: 'MVC Like architecture',
     description: (
       <>
-        Simple like Laravel
+        Looks familiar to Laravel fox
       </>
     ),
   },
@@ -19,7 +19,7 @@ const features = [
     title: 'Based on Gin Framework',
     description: (
       <>
-        All Gin features available
+        You can use all Gin features
       </>
     ),
   },
@@ -64,10 +64,18 @@ const features = [
     ),
   },
   {
+    title: 'Let's Encrypt auto certs,
+    description: (
+      <>
+        Let's Encrypt auto certificates manager
+      </>
+    ),
+  },
+  {
     title: 'Context Package Integrator',
     description: (
       <>
-        Integrate any go package to gin context
+        Integrate any go package into gin context
       </>
     ),
   },
