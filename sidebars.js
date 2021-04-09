@@ -19,7 +19,11 @@ module.exports = {
         'cache',
         'gin-context',
         'tls',
-        'contribute'
+        'contribute',
+        'database-config',
+        'database-models',
+        'database-crud',
+        'database-relationships'
       ],
     }
   ],
