@@ -51,6 +51,15 @@ func SomeHandler(c *gin.Context) {
 
 	// check error ErrRecordNotFound
 	errors.Is(result.Error, gorm.ErrRecordNotFound)
+
+	// Get all records
+	var users []User
+	result := db.Find(&users)
+	// SELECT * FROM users;
+
+	result.RowsAffected // returns found records count, equals `len(users)`
+	result.Error        // returns error
+
 }
 ```
 For more advanced queries check [GORM advanced queries docs](https://gorm.io/docs/advanced_query.html)

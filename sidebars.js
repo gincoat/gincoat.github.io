@@ -10,6 +10,7 @@ module.exports = {
         'features-control',
         'routing',
         'handlers',
+        'response',
         'request-data',
         'validation',
         'middlewares',
