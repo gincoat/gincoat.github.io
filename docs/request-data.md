@@ -1,5 +1,5 @@
 ---
-title: Request Data
+title: Request
 ---
 
 #### URL Parameters

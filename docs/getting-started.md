@@ -2,7 +2,7 @@
 title: Getting Started
 ---
 
-First make sure you have `Condor cli` installed by running `go get github.com/gocondor/installer/condor`, then create a project using the following command `condor new [project-name] [project-location]`
+First make sure you have `GoCondor cli` installed by running `go get github.com/gocondor/installer/condor`, then create a project using the following command `gocondor new [project-name] [project-location]`
 
 Now Let's create a route to handle our first request.
 lets assume the request is of a type `get` and will be made to the root `/` and the response should be the following:

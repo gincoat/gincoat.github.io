@@ -1,5 +1,5 @@
 ---
-title: Rendering Response
+title: Response
 ---
 
 Rendering the response is based on the type of the response, below is the different types of responses you can render
