@@ -18,7 +18,6 @@ module.exports = {
         'middlewares',
         'redirect',
         'jwt',
-        'package-integrator',
         'cache',
         'tls',
         'contribute',

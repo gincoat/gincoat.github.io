@@ -18,11 +18,7 @@ REDIS_DB_NAME=
 Next let's set something in the cache and retrieve it, here is how we can do it
 ```go
 func SomeHander(c *gin.Context) {
-	// get the cache engine variable
-	cache := c.MustGet(core.CACHE).(*cache.CacheEngine)
-
-	// set in cache
-	_, err := cache.Set("name", "jack")
+	_, err := Cache.Set("name", "jack")
 	if err != nil {
 	 	panic(err)
 	 }
@@ -30,3 +26,5 @@ func SomeHander(c *gin.Context) {
 	 // get from cache
 	name, err := cache.Get("name")
 ```
+Note:
+the variable `Cache` is set in the file `http/handlers/deps.go`

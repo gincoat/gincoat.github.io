@@ -1,7 +1,7 @@
 ---
 title: Environment Variables
 ---
-Enviroment Variables are defined in the file `.env` at the root, the automatically get set into the os enviroment variables, you can access them using `os.Getenv(key-name)` function by passing the key name, here is a sample of the file content:
+Enviroment Variables are defined in the file `.env` at the root folder, they automatically get set into the `os` enviroment variables, you can access them using `os.Getenv(key-name)` function by passing the key name, here is a sample of the file content:
 ```bash
 #################################
 ###                           ###

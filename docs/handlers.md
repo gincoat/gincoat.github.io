@@ -2,7 +2,7 @@
 title: Handlers
 ---
 
-A Handler is nothing but a function of type `gin.HandlerFunc` that contains the logic to handle the request, it has the following signature:
+A Handler is nothing but a function of the type `gin.HandlerFunc` that contains the logic to handle the request, it has the following signature:
 ```go
 func (c *gin.Context){}
 ```

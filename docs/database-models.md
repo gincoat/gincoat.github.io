@@ -16,12 +16,12 @@ type User struct {
   UpdatedAt    time.Time
 }
 ```
-Next we need to tell `GoCondor` to auto migrate the model you can learn more about auto migration at [GORM auto migration docs](https://gorm.io/docs/migration.html), you can do that by adding the line `db.AutoMigrate(&User{})` to the function `MigrateDB()` in the file `models/migration.go`, make sure the function looks like below:
+Next we need to tell `GoCondor` to auto migrate the model you can learn more about auto migration at [GORM auto migration docs](https://gorm.io/docs/migration.html), you can do that by adding the line `DB.AutoMigrate(&User{})` to the function `MigrateDB()` in the file `models/migration.go`, make sure the function looks like below:
 ```go
 func MigrateDB() {
-	db := database.Resolve()
+	DB := database.Resolve()
 	// Add your models to be auto migrated here
-	db.AutoMigrate(&User{})
+	DB.AutoMigrate(&User{})
 }
 ```
 
