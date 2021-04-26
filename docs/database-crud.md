@@ -2,10 +2,10 @@
 title: CRUD Operations
 ---
 
-To perform operations on your database first make sure `Database` is enabled in the `Features` struct which located at `config/features.go`, then add the database connection information in the `.env` file.
-All operations are performed with a database variable named `DB` which is available to your handlers since it's set in the file `http/handlers/deps.go`
+To perform operations on your database first make sure `Database` is enabled in the `Features` struct which is located at `config/features.go`, then add the database connection information in the `.env` file.
+All operations are performed with a database variable named `DB` which is available to all your handlers and middlewares since it's set in deps files `http/handlers/deps.go` and `http/middlewares/deps.go`
 
-## Create 
+## Creating records
 Here is an example of how you can create a database record 
 ```go
 func SomeHandler(c *gin.Context) {
@@ -18,13 +18,14 @@ func SomeHandler(c *gin.Context) {
 }
 ```
 
-## Read
+## Reading records
 Here is how you can read records
 ```go
 func SomeHandler(c *gin.Context) {
 	var user User
 	DB.First(&user, 1) // find user with integer primary key
-  	DB.First(&user, "email = ?", "jack@mail.com") // find user with email jack@mail.com
+
+  	DB.Where("email = ?", "jack@mail.com").First(&user),  // find the first user with email jack@mail.com
 
   	// Get the first record ordered by primary key
 	DB.First(&user)
@@ -57,7 +58,7 @@ func SomeHandler(c *gin.Context) {
 ```
 For more advanced queries check [GORM advanced queries docs](https://gorm.io/docs/advanced_query.html)
 
-## Update
+## Updating Records
 Here is how you can update a record 
 ```go
 func SomeHandler(c *gin.Context) {
@@ -66,11 +67,11 @@ func SomeHandler(c *gin.Context) {
 
 	user.Name = "Joe"
 	user.Age = 100
-	DB.Save(&user)
+	DB.Save(&user) // Note: save creates the record if missing
 }
 ```
 
-## Delete
+## Deleting Records
 Here is how you can delete records:
 ```go
 func SomeHandler(c *gin.Context) {

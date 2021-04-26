@@ -1,7 +1,7 @@
 ---
 title: Environment Variables
 ---
-Enviroment Variables are defined in the file `.env` at the root folder, they automatically get set into the `os` enviroment variables, you can access them using `os.Getenv(key-name)` function by passing the key name, here is a sample of the file content:
+Enviroment Variables are defined in the file `.env` at the root folder, they automatically get set into the `os` enviroment variables, you can access them using `os.Getenv("key-name")` function by passing the key name, here is a sample of the `.env` file content:
 ```bash
 #################################
 ###                           ###
@@ -54,6 +54,5 @@ CACHE_DRIVER=redis
 REDIS_HOST=localhost
 REDIS_PORT=6379
 REDIS_PASSWORD=
-REDIS_TTL_SECONDS=0
-REDIS_DB_NAME=
+REDIS_DB_NAME=0
 ```

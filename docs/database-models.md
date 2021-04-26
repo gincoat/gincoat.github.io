@@ -2,7 +2,7 @@
 title: Models
 ---
 
-Models are representations of your database tables and the information that they hold, the help you manipulate the information of these tables, Models are basic go struct, all models lives in the folder `models` at the root of your app, here is how you can declare a model that represents `Users` table:
+Models are representations of your database tables and the information that they hold. They help you manipulate the information of these tables, Models are basic Go structs, all models lives in the folder `models` at the root of your project, here is how you can declare a model that represents `Users` table:
 ```go
 type User struct {
   ID           uint

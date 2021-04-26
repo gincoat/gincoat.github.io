@@ -2,7 +2,7 @@
 title: Database Configuration
 ---
 
-GoCondor uses [GORM](https://gorm.io/) for database manipulation, all the features of `GORM` are available for two databases `mysql` and `sqlite`, more databases will be added in the future, to use GORM make sure `Database` is enabled in the `Features` struct which located at `config/features.go`, next add the database connection information to the `.env` file, here is a sample of it:
+GoCondor uses [GORM](https://gorm.io/) for database manipulation, all the features of `GORM` are available for you to use. GoCondor supports two databases `mysql` and `sqlite`, more databases will be added in the future, to use GORM make sure `Database` attribute is enabled in `config/features.go`, next add the database connection information to the `.env` file, here is a sample of it:
 ```bash
 #################################
 ###            DATABASE       ###
