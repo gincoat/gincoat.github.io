@@ -13,6 +13,8 @@ func SomeHandler(c *gin.Context) {
     })
 }
 ```
+Note:
+obj is the data to be passed to the template
 
 ## Rendering JSON
 `JSON` is rendered using the method `c.JSON(code int, obj interface{})` in the context

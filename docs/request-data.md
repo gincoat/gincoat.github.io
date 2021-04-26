@@ -33,7 +33,7 @@ func SomeHandler(c *gin.Context) {
 ```
 
 #### Post Data
-here is how you can get the posted data:
+Here is how you can get the posted data:
 ```go
 func SomeHandler(c *gin.Context) {
 	name := c.PostForm("name") # get the parameter 
@@ -43,14 +43,14 @@ func SomeHandler(c *gin.Context) {
 ```
 
 #### Files:
-here is how you can get a single file
+Here is how you can get a single file
 ```go
 func SomeHandler(c *gin.Context) {
 	file, _ := c.FormFile("filename")
 }
 ```
 
-here is how you can get multiple files:
+Here is how you can get multiple files:
 ```go
 func SomeHandler(c *gin.Context) {
 	form, _ :=c.MultipartForm()
@@ -72,7 +72,7 @@ func SomeHandler(c *gin.Context) {
 ```
 
 #### Header Data:
-here is how you can get header data:
+Here is how you can get header data:
 ```go
 func SomeHandler(c *gin.Context) {
 	authToken := c.Request.Header["Authorization"] # get the 'authorization' header

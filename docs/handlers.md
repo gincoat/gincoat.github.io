@@ -11,8 +11,8 @@ It accepts a variable of Gin context which provides you will all the functionali
 #### How to organize your handlers
 the best way to organize handlers is to think of them like `controller's actions` in `MVC`. Just like in `MVC` where we create a `controller` for every `resource`, here we create a handlers file for every `resource`.
 
-For example, let's assume that we are building an app to manage todos which will be added by users. By analyzing we can see that we need to manage two resources: `users` and `todos`.
-Now let's create these files:
+For example, let's assume that we are building an app to manage todos which will be added by users. After analyzing we can see that we need to manage two resources: `users` and `todos`.
+Now let's create the files for these resources:
 
 1- the first file `httpd/handlers/users.go` contains:
 ```go

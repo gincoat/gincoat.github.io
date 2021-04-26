@@ -3,7 +3,7 @@ title: Introduction
 slug: /
 ---
 
-Condor is a golang web framework with an `MVC` like architecture, it's based on [Gin framework](https://github.com/gin-gonic/gin), it provides you with an easy-to-use directory structure for your next project, it has a development experience similar to Laravel, made for developing modern APIs and microservices.
+GoCondor is a golang web framework with an `MVC` like architecture, it's based on [Gin framework](https://github.com/gin-gonic/gin), it features a simple organized directory structure for your next project with a pleasant development experience, made for developing modern APIs and microservices.
 
 ## Features 
 - Router
@@ -12,12 +12,12 @@ Condor is a golang web framework with an `MVC` like architecture, it's based on 
 - ORM (GORM)
 - Cache (Redis)
 - TLS
-- Context Package Integrator
 - Live-Reloading for development
 - Features Control
 
 ## Architecture
-The architecture is similar to `MVC` architecture, there is a `routes.go` file where you can define all your routes and their `handlers`, the handler is simply a method that gets executed when the request is received, you can think of it like a controller's action in `MVC`
+The architecture is similar to `MVC`, where there is a routes file `http/routes.go` in which you can map all your app routes to their handlers.
+Handlers are simply methods that get executed when the matching request is received, you can think of it like a controller's action in `MVC`
 
 #### The request journey:
 `Request -> Routing -> Middleware -> Handler -> Middleware -> Json Response`
@@ -27,16 +27,15 @@ The architecture is similar to `MVC` architecture, there is a `routes.go` file w
 ├── condor
 │   ├── config/ ---------------> control what features to turn on
 │   ├── httpd/-----------------> http related code
-│   │   ├── handlers/ --------------> contains your http requests handlers
+│   │   ├── handlers/ --------------> contains your requests handlers
 │   │   ├── middlewares/ -----------> middlewares are defined here
-│   ├── routes.go -------------> your routes are defined here
-│   ├── integrations/ ---------> contains the integrations of third party packages into gin context
-│   ├── logs/ -----------------> log files
+│   ├── routes.go -------------> routes are mapped to their handlers here
+│   ├── logs/ -----------------> logs file is here
 │   ├── models/ ---------------> database models
-│   ├── ssl/ ------------------> ssl certificates
+│   ├── ssl/ ------------------> ssl certificates goes here
 │   ├── .env ------------------> environment variables 
-│   ├── .gitignore ------------> gitignore file
-│   ├── go.mod ----------------> go modules the project depends on
+│   ├── .gitignore ------------> .gitignore file
+│   ├── go.mod ----------------> Go modules that project depends on
 │   ├── LICENSE ---------------> license
 │   ├── main.go ---------------> main file
 │   ├── README.md -------------> readme file

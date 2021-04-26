@@ -2,7 +2,7 @@
 title: Validation and Input Binding
 ---
 
-Validation takes place when you fill (bind) a given struct with your request data, this struct could be any of your database models which live in the directory `models`, or any of your input model which lives in `httpd/input/input.go`, the input models are simply an intermediate models that used only for validation, you can use them when you don't want to fill your database models with the request data.
+Validation takes place when you fill (bind) a given struct with your request data, this struct could be any of your database models which live in the directory `models`, or any of your input model which lives in `httpd/input/input.go`, the input models are simply an intermediate structs used only for validation, you can use them when you don't want to fill your database models with the request data.
 the Validation is based on the package [go-playground/validator.v8](https://pkg.go.dev/gopkg.in/go-playground/validator.v8)
 
 ### How to define validation rules
@@ -10,7 +10,7 @@ Validation rules are defined using the struct tag `binding`, here is an example 
 ```go
 type User struct {
 	Name string `json: "name" form: "name" binding:"required,alphanum"`
-	Age  int    `json: "age"  form: "age"  binding:"required,alphanum,gte=18"`
+	Age  int    `json: "age"  form: "age"  binding:"required,numeric,gte=18"`
 }
 ```
 Note: 
@@ -18,7 +18,7 @@ Note:
 - the tag `binding` indicates the validation rules.
 
 ### Execute the validation
-to execute the validation you simply need to bind the request data to your struct using the method `ShouldBind(&var)`, or if you are sure what is the type of content of the request, you can use the proper method which is one of these 'ShouldBind(&var)', ShouldBindJSON(&var), ShouldBindXML(&var), ShouldBindQuery(&var), ShouldBindYAML(&var), ShouldBindHeader(&var).
+To execute the validation you simply need to bind the request data to your struct using the method `ShouldBind(&var)`, or if you are sure what is the type of content of the request, you can use the proper method which is one of these ShouldBindJSON(&var), ShouldBindXML(&var), ShouldBindQuery(&var), ShouldBindYAML(&var), ShouldBindHeader(&var).
 As you can see all these methods a pointer to a declared variable of the type of your struct.
 If validation failed, an error will be returned, here is an example of how we can bind and validate the request data to the above struct 
 ```go

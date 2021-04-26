@@ -23,4 +23,4 @@ gocondor run:dev
 ```
 Finally, open up your browser and navigate to `localhost:8000/hello`.
 
-To learn how to create handlers files and how to add handlers to them check [handlers docs](https://gocondor.github.io/docs/handlers)
+To learn how to create handlers files and how to add handlers to them check [handlers docs](./handlers)

@@ -2,7 +2,7 @@
 title: Redirect
 ---
 
-To redirect to any url internal or external simply call the `Redirect` in the context variable, here is how you can do it:
+To redirect to any url internal or external simply call the context's method `Redirect`, here is how you can do it:
 ```go
 func SomeHandler(c *gin.Context){
 	c.Redirect(http.StatusMovedPermanently, "https://google.com")
