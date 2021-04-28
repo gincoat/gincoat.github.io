@@ -13,7 +13,7 @@ const features = [
     title: 'MVC Like architecture',
     description: (
       <>
-        Looks familiar to Laravel fox
+        Simple directory structure
       </>
     ),
   },
@@ -38,6 +38,14 @@ const features = [
     description: (
       <>
         Generate JWT tokens and refresh tokens
+      </>
+    ),
+  },
+  {
+    title: 'Sessions',
+    description: (
+      <>
+        Memstore, Cookie, Redis powered sessions
       </>
     ),
   },
@@ -70,14 +78,6 @@ const features = [
     description: (
       <>
         Let's Encrypt auto certificates manager
-      </>
-    ),
-  },
-  {
-    title: 'Context Package Integrator',
-    description: (
-      <>
-        Integrate any go package into gin context
       </>
     ),
   },

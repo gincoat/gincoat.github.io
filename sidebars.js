@@ -16,6 +16,7 @@ module.exports = {
         'gin-context',
         'validation',
         'middlewares',
+        'sessions',
         'redirect',
         'jwt',
         'cache',
