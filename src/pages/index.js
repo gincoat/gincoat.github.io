@@ -26,6 +26,21 @@ const features = [
     ),
   },
   {
+    title: 'Routing',
+    description: (
+      <>
+        Router with support of all http methods
+      </>
+    ),
+  },{
+    title: 'Routing Groups',
+    description: (
+      <>
+        Group all related routes together
+      </>
+    ),
+  },
+  {
     title: 'Middlewares',
     description: (
       <>
