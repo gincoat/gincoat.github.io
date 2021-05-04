@@ -73,6 +73,14 @@ const features = [
     ),
   },
   {
+    title: 'Auth',
+    description: (
+      <>
+        Work with user's authentication
+      </>
+    ),
+  },
+  {
     title: 'Cache',
     description: (
       <>
