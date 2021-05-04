@@ -26,6 +26,15 @@ func SomeHandler(c *gin.Context) {
 	Session.Get("key", c)
 }
 ```
+
+#### Session Has
+To check if a value is set in the session:
+```go
+func SomeHandler(c *gin.Context) {
+	Session.Has("key", c)
+}
+```
+
 #### Session Pull
 Pull retrieves a value from the session and deletes it, below is how you can use pull
 ```go
