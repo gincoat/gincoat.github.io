@@ -19,6 +19,7 @@ module.exports = {
         'sessions',
         'redirect',
         'jwt',
+        'auth',
         'cache',
         'tls',
         'contribute',
