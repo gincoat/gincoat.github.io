@@ -73,10 +73,10 @@ const features = [
     ),
   },
   {
-    title: 'Auth',
+    title: 'Authentication',
     description: (
       <>
-        Work with user's authentication
+        Users authentication
       </>
     ),
   },

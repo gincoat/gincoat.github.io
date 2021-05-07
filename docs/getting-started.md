@@ -19,7 +19,11 @@ func RegisterRoutes() {
 ```
 Next cd into the project folder and start the app by running the following command:
 ```bash
-gocondor run:dev
+go run main.go
+```
+or you can start it using [Air](https://github.com/cosmtrek/air)
+```bash
+air main.go
 ```
 Finally, open up your browser and navigate to `localhost:8000/hello`.
 

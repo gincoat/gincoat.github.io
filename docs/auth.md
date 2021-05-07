@@ -1,5 +1,5 @@
 ---
-title: Auth package
+title: Authentication
 ---
 
 Auth package helps you work with users authentication, it helps you log users in, log them out, and check if they are already authenticated, it uses the `sessions` package under the hood to perform these action, the package path is `"github.com/gocondor/core/auth"`, to work with it you need first to import it and then resolve the instance of the auth using `auth.Resolve()` method.
