@@ -40,7 +40,7 @@ func SomeHandler(c *gin.Context) {
 `YAML` is rendered using the method `c.YAML(code int, obj interface{})` in the context
 ```go
 func SomeHandler(c *gin.Context) {
-    c.XML(http.StatusOK, gin.H{
+    c.YAML(http.StatusOK, gin.H{
         "message": "this is a message",
     })
 }
