@@ -3,41 +3,41 @@ title: Introduction
 slug: /
 ---
 
-GoCondor is a golang web framework with an `MVC` like architecture, it's based on [Gin framework](https://github.com/gin-gonic/gin), it features a simple organized directory structure for your next project with a pleasant development experience, made for developing modern APIs and microservices.
+GoCondor is a Golang web framework made for building web APIs, suitable for small & medium size projects and microservices. with it's simple structure, developer friendly experience it makes developers happly more productive.
 
 ## Features 
-- Router
+- Routing
 - Middlewares
+- Validation
+- Databases ORM (GORM)
+- Emails
 - JWT tokens
-- ORM (GORM)
-- Authentication
 - Cache (Redis)
-- TLS
-- Live-Reloading for development
-- Features Control
+- HTTPS (TLS)
 
 ## Architecture
-The architecture is similar to `MVC`, where there is a routes file `http/routes.go` in which you can map all your app routes to their handlers.
-Handlers are simply methods that get executed when the matching request is received, you can think of it like a controller's action in `MVC`
+The architecture is similar to `MVC`, where there is a routes file `./routes.go` in which you can map all your app routes to their handlers which resides in the directory `./handlers`. Handlers are simply methods that handles requests (GET, POST, ... etch) to the given routes.
 
 #### The request journey:
-`Request -> Routing -> Middleware -> Handler -> Middleware -> Json Response`
+`Request -> Router -> Optional Middleware -> Handler -> Optional Middleware ->  Response`
 
 ## Directory structure 
 ```bash
-├── condor
-│   ├── config/ ---------------> control what features to turn on
-│   ├── httpd/-----------------> http related code
-│   │   ├── handlers/ --------------> contains your requests handlers
-│   │   ├── middlewares/ -----------> middlewares are defined here
-│   ├── routes.go -------------> routes are mapped to their handlers here
-│   ├── logs/ -----------------> logs file is here
-│   ├── models/ ---------------> database models
-│   ├── ssl/ ------------------> ssl certificates goes here
-│   ├── .env ------------------> environment variables 
-│   ├── .gitignore ------------> .gitignore file
-│   ├── go.mod ----------------> Go modules that project depends on
-│   ├── LICENSE ---------------> license
-│   ├── main.go ---------------> main file
-│   ├── README.md -------------> readme file
+├── gocondor
+│   ├── config/ --------------------------> main configs
+│   ├── handlers/ ------------------------> route's handlers
+│   ├── logs/ ----------------------------> app log files
+│   ├── middlewares/ ---------------------> app middlewares
+│   ├── models/ --------------------------> database models
+│   ├── tls/ -----------------------------> tls certificates
+│   ├── storage/ -------------------------> a place to store files
+│   ├── .env -----------------------------> environment variables 
+│   ├── .gitignore -----------------------> .gitignore
+│   ├── go.mod ---------------------------> Go modules
+│   ├── LICENSE --------------------------> license
+│   ├── main.go --------------------------> go main file
+│   ├── README.md ------------------------> readme file
+│   ├── register-global-middlewares.go ---> register global middlewares
+│   ├── routes.go ------------------------> app routes
+│   ├── run-auto-migrations.go -----------> database migrations
 ```
