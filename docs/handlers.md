@@ -2,66 +2,66 @@
 title: Handlers
 ---
 
-A Handler is nothing but a function of the type `gin.HandlerFunc` that contains the logic to handle the request, it has the following signature:
-```go
-func (c *gin.Context){}
+A Handler is nothing but a function to handle the http request
+Here is an example of a handler function to list users
+```go title="#file: handlers/users.go"
+package handlers
+
+import (
+	"github.com/gocondor/core"
+)
+
+func ListUsers(c *core.Context) *core.Response {
+	// the logic for listing users
+}
 ```
-It accepts a variable of Gin context which provides you will all the functionalities and variables that you may need to process the request
 
-#### How to organize your handlers
-the best way to organize handlers is to think of them like `controller's actions` in `MVC`. Just like in `MVC` where we create a `controller` for every `resource`, here we create a handlers file for every `resource`.
+### How to organize the handlers
+the best way to organize handlers is to think of them like `controller's actions` in `MVC`.
+You can simply group all handlers of the same resource in one file.
+here is an example:
+Imaging we are creating an app for handling `todos`, in this app we have `users` and the `users` have `todos` here is how we can organize the handlers of both the `users` and the `todos`
 
-For example, let's assume that we are building an app to manage todos which will be added by users. After analyzing we can see that we need to manage two resources: `users` and `todos`.
-Now let's create the files for these resources:
 
-1- the first file `httpd/handlers/users.go` contains:
+1- The handlers of users
+```go title="#file: handlers/users.go"
+package handlers
+
+import (
+	"github.com/gocondor/core"
+)
+
+func CreateUsers(c *core.Context) *core.Response {
+	// the logic here...
+}
+
+func ListUsers(c *core.Context) *core.Response {
+	// the logic here...
+}
+
+func DeleteUsers(c *core.Context) *core.Response {
+	// the logic here...
+}
+
+```
+
+1- the handlers of todos
 ```go
 package handlers
 
 import (
-	"github.com/gin-gonic/gin"
+	"github.com/gocondor/core"
 )
 
-func UsersShow(c *gin.Context) {
-	//show the list of users
+func CreateTodos(c *core.Context) *core.Response {
+	// the logic here...
 }
 
-func UsersStore(c *gin.Context) {
-	// store a user
+func ListTodos(c *core.Context) *core.Response {
+	// the logic here...
 }
 
-func UsersEdit(c *gin.Context) {
-	// edit a user
-}
-
-func UsersDelete(c *gin.Context) {
-	// edit a user
+func DeleteTodos(c *core.Context) *core.Response {
+	// the logic here...
 }
 ```
-
-1- the second file `httpd/handlers/todos.go` contains:
-```go
-package handlers
-
-import (
-	"github.com/gin-gonic/gin"
-)
-
-func TodosShow(c *gin.Context) {
-	//show the list of todos
-}
-
-func TodosStore(c *gin.Context) {
-	// store a todo
-}
-
-func TodosEdit(c *gin.Context) {
-	// edit a todo
-}
-
-func TodosDelete(c *gin.Context) {
-	// edit a todo
-}
-```
-Note:
-As you can see all handler's names are prefixed with the resource's names, and this is to avoid collision between names since all handlers share the same package name `handlers`

@@ -1,58 +1,99 @@
 ---
 title: Environment Variables
 ---
-Enviroment Variables are defined in the file `.env` at the root folder, they automatically get set into the `os` enviroment variables, you can access them using `os.Getenv("key-name")` function by passing the key name, here is a sample of the `.env` file content:
+Environment variables are values accessible globally within the app
+### Setting environment variables
+you can set these variables to the environment either with an external tool or via the `.env` file  
+
+### Accessing the environment variables
+Environment variables can be accessed with Golang's syntax below:
+```go
+os.Getenv("ENV-VARIALBE-KEY")
+```
+
+### Disabling the .env file
+Sometimes you might want to set environment variables with an external tool instead of using the `.env` file, to avoid overriding you can disable injecting the `.env` file variables by setting the config var `UseDotEnvFile` in `config/dotenvfile.go` to `false`
+
+Here is an example of GoCondor's environment variables in the `.env` file
 ```bash
-#################################
-###                           ###
-#################################
-APP_NAME=Condor
-APP_MODE=debug  # debug | release | test
-APP_HTTP_HOST=localhost
-APP_HTTP_PORT=8000
+#######################################
+######            App            ######
+#######################################
+APP_NAME=GoCondor
+APP_ENV=local  # local | testing | production
+App_HTTP_HOST=localhost
+App_HTTP_PORT=8000
+App_USE_HTTPS=false
+App_USE_LETSENCRYPT=false
+APP_LETSENCRYPT_EMAIL=mail@example.com
+App_HTTPS_HOSTS=example.com, www.example.com
+App_REDIRECT_HTTP_TO_HTTPS=false
+App_CERT_FILE_PATH=tls/server.crt
+App_KEY_FILE_PATH=tls/server.key
 
-#################################
-###            TLS            ###
-#################################
-APP_HTTPS_ON=false
-APP_REDIRECT_HTTP_TO_HTTPS=false
-APP_HTTPS_HOST=localhost
-APP_HTTPS_CERT_FILE_PATH=ssl/server.crt
-APP_HTTPS_KEY_FILE_PATH=ssl/server.key
+#######################################
+######            JWT            ######
+#######################################
+JWT_SECRET=dkfTgonmgaAdlgkw
+JWT_LIFESPAN_MINUTES=10080 # 7 days
 
-#################################
-###            JWT            ###
-#################################
-JWT_SECRET=jwt-secret-key
-JWT_LIFESPAN_MINUTES=60
-JWT_REFRESH_TOKEN_SECRET=jwt-refresh-token-secret
-JWT_REFRESH_TOKEN_LIFESPAN_HOURS=24
-
-
-#################################
-###            DATABASE       ###
-#################################
-DB_DRIVER=sqlite  # mysql | sqlite
-
-# MYSQL
+#######################################
+######            DATABASE       ######
+#######################################
+DB_DRIVER=mysql  # mysql | postgres | sqlite
+#_____ MYSQL _____#
 MYSQL_HOST=localhost
-MYSQL_DB_NAME=condor
+MYSQL_DB_NAME=db_test
 MYSQL_PORT=3306
 MYSQL_USERNAME=root
-MYSQL_PASSWORD=
+MYSQL_PASSWORD=root
 MYSQL_CHARSET=utf8mb4
 
-# SQLITE
-SQLITE_DB=database/db.sqlite
+#_____ postgres _____#
+POSTGRES_HOST=localhost
+POSTGRES_USER=user
+POSTGRES_PASSWORD=secret
+POSTGRES_DB_NAME=db_test
+POSTGRES_PORT=5432
+POSTGRES_SSL_MODE=disable
+POSTGRES_TIMEZONE=Asia/Dubai
 
+#_____ SQLITE _____#
+SQLITE_DB_PATH=storage/sqlite/db.sqlite
 
-#################################
-###            CACHE          ###
-#################################
+#######################################
+######            CACHE          ######
+#######################################
 CACHE_DRIVER=redis
-
 REDIS_HOST=localhost
 REDIS_PORT=6379
 REDIS_PASSWORD=
-REDIS_DB_NAME=0
+REDIS_DB=0
+
+#######################################
+######           Emails          ######
+#######################################
+EMAILS_DRIVER=smtp # smtp | sparkpost | sendgrid | mailgun
+#_____ SMTP _____#
+SMTP_HOST=localhost
+SMTP_PORT=25
+SMTP_USERNAME=
+SMTP_PASSWORD=
+SMTP_TLS_SKIP_VERIFY_HOST=true # (set true for development only!)
+
+#_____ sparkpost _____#
+SPARKPOST_BASE_URL=https://api.sparkpost.com
+SPARKPOST_API_VERSION=1
+SPARKPOST_API_KEY=sparkpost-api-key-here # the api key
+
+#_____ sendgrid _____#
+SENDGRID_HOST=https://api.sendgrid.com
+SENDGRID_ENDPOINT=/v3/mail/send
+SENDGRID_API_KEY=sendgrid-api-key-here # the api key
+
+#_____ mailgun _____#
+MAILGUN_DOMAIN=your-domain.com # your domain
+MAILGUN_API_KEY=mailgun-api-key-here # the api key
+MAILGUN_TLS_SKIP_VERIFY_HOST=true # (set true for development only!)
+
 ```

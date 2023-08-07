@@ -1,30 +1,25 @@
 ---
 title: Getting Started
 ---
-Let's add the route `/hello`, and lets have `hello there!` as the response.
-To do that Open the file `http/routes.go` in your editor, update the function `RegisterRoutes()`, make sure the it looks like below:
+Let's create a route that returns `hello world`
+Open up the file `routes.go` in the root of your project and add to it the code below:
+```go "defining a route"
+	router.Get("/", func(c *core.Context) *core.Response {
+		JsonString := `{"message": "hello world"}`
+
+		return c.Response.Json(JsonString)
+	})
+```
+Next, build the project by running the following command in the terminal:
 ```go
-func RegisterRoutes() {
-    router := routing.Resolve()
-
-    // Define your routes here
-    router.Get("/hello", func(c *gin.Context) {
-        message := "hello there!"
-
-        c.JSON(http.StatusOK, gin.H{
-            "message": message,
-        })
-    })
-}
+go build -o ./
 ```
-Next cd into the project folder and start the app by running the following command:
-```bash
-go run main.go
-```
-or you can start it using [Air](https://github.com/cosmtrek/air)
-```bash
-air main.go
-```
-Finally, open up your browser and navigate to `localhost:8000/hello`.
+this will produce an executable file with the name of your project in the root directory of your project
 
-To learn how to create handlers files and how to add handlers to them check [handlers docs](./handlers)
+Next, run the executable file using following command:
+```go
+./[name-of-the-executable-file]
+```
+Finally, open up your browser and navigate to `localhost:8000`
+
+To learn more check the [routing docs section](https://gocondor.github.io/docs/routing)

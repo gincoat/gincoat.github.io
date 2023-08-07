@@ -1,47 +1,51 @@
 ---
 title: Response
 ---
+Below is the different types of responses you can return to the user
 
-Rendering the response is based on the type of the response, below is the different types of responses you can render
-
-## Rendering HTML
-`HTML` is rendered using the method `c.HTM(code int, templateName string, obj interface{})` in the context
+## Return JSON
 ```go
-func SomeHandler(c *gin.Context) {
-    c.HTML(http.StatusOK, "index.html", gin.H{
-        "message": "this is a message",
-    })
-}
-```
-Note:
-obj is the data to be passed to the template
-
-## Rendering JSON
-`JSON` is rendered using the method `c.JSON(code int, obj interface{})` in the context
-```go
-func SomeHandler(c *gin.Context) {
-    c.JSON(http.StatusOK, gin.H{
-        "message": "this is a message",
-    })
+func SomeHandler(c *core.Context) {
+    return c.Response.Json(myJson)
 }
 ```
 
-## Rendering XML
-`XML` is rendered using the method `c.XML(code int, obj interface{})` in the context
+## Return HTML
 ```go
-func SomeHandler(c *gin.Context) {
-    c.XML(http.StatusOK, gin.H{
-        "message": "this is a message",
-    })
+func SomeHandler(c *core.Context) {
+    return c.Response.HTML(myHTML)
 }
 ```
 
-## Rendering YAML
-`YAML` is rendered using the method `c.YAML(code int, obj interface{})` in the context
+## Return Text
 ```go
-func SomeHandler(c *gin.Context) {
-    c.XML(http.StatusOK, gin.H{
-        "message": "this is a message",
-    })
+func SomeHandler(c *core.Context) {
+    return c.Response.Text(myText)
+}
+```
+
+## Return Any response
+```go
+func SomeHandler(c *core.Context) {
+    return c.Response.Any(anyResponse)
+}
+```
+
+## Set response content type
+```go
+func SomeHandler(c *core.Context) {
+    return c.Response.SetContentType("application/json").any(myJson)
+}
+```
+## Set response headers
+```go
+func SomeHandler(c *core.Context) {
+    return c.Response.SetHeader("key", "value").Json(myJson)
+}
+```
+## Set response status code
+```go
+func SomeHandler(c *core.Context) {
+    return c.Response.SetStatusCode(400).Json(myJson)
 }
 ```

@@ -2,48 +2,74 @@
 title: Cache
 ---
 
-GoCondor uses `Redis` for cache, to enable the cache feature set the attribute`Cache` to in `config/features.go` to `true`, then add Redis connection information in the `.env` file, here is a sample of the `.env` file content:
-```bash
+GoCondor uses `Redis` for cache and its disabled by default, you can enable it in the file `config/cache.go` by setting the attribute `EnableCache` to `true`, then add `Redis connection information` to the `.env` if you are using it. otherwise you can use an external tool to inject these variables to the environment
 
-#################################
-###            CACHE          ###
-#################################
+ Here is a sample of the `Redis connection information` in the `.env` file:
+```bash
+#######################################
+######            CACHE          ######
+#######################################
 CACHE_DRIVER=redis
 REDIS_HOST=localhost
 REDIS_PORT=6379
 REDIS_PASSWORD=
-REDIS_DB_NAME=0
+REDIS_DB=0
 ```
-Next let's set something in the cache and retrieve it
-#### Cache Set
+
+#### Set values in the cache
 ```go
-func SomeHander(c *gin.Context) {
-	_, err := Cache.Set("name", "jack")
+package handlers
 
-	if err != nil {
-	 	panic(err)
-	 }
+import (
+	"github.com/gocondor/core"
+)
+
+func Login(c *core.Context) *core.Response {
+	err := c.GetCache().Set("userID", 12345)
+}
 ```
-#### Cache Get
+
+#### Set values in the cache with expiration date
 ```go
-func SomeHander(c *gin.Context) {
-	name, err := cache.Get("name")
+package handlers
 
-	if err != nil {
-	 	panic(err)
-	 }
+import (
+	"github.com/gocondor/core"
+)
 
+func Login(c *core.Context) *core.Response {
+	hours24 := time.Duration(time.Hour * 24) // 24 hours duration
+	afterHours24: time.Now().Add(hours24) // the date after 24 hours from now
+	err := c.GetCache().SetWithExpiration("userID", 12345, afterHours24) // expires after 24 hours
+}
 ```
+
+
+
+#### Get values from cache
+Here is how you can get values from cache
+```go
+package handlers
+
+import (
+	"github.com/gocondor/core"
+)
+
+func Login(c *core.Context) *core.Response {
+	userID, err := c.GetCache().Get("userID")
+}
+```
+
 #### Cache Delete
+Here is how you can delete something from the cache
 ```go
-func SomeHander(c *gin.Context) {
-	name, err := cache.Delete("name")
-	
-	if err != nil {
-	 	panic(err)
-	 }
+package handlers
 
+import (
+	"github.com/gocondor/core"
+)
+
+func Login(c *core.Context) *core.Response {
+	err := c.GetCache().Delete("userID")
+}
 ```
-
-Note:
-the variable `Cache` is set in the file `http/handlers/deps.go`

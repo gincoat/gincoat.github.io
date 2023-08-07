@@ -4,7 +4,7 @@ title: Redirect
 
 To redirect to any url internal or external simply call the context's method `Redirect`, here is how you can do it:
 ```go
-func SomeHandler(c *gin.Context){
+func SomeHandler(c *core.Context){
 	c.Redirect(http.StatusMovedPermanently, "https://google.com")
 }
 ```

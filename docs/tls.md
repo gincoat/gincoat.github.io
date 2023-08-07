@@ -2,24 +2,28 @@
 title: TLS
 ---
 
-GoCondor gives you the ability to run your app in `ssl` mode, you just need to copy your ssl certificates `server.cert` and `server.key` to the directory `ssl` at the root directory, next update the `TLS` section in the `.env` file by adding to it the paths of these files and domain name, and don't forget to set `APP_HTTPS_ON` to true, here is a sample of that section:
+GoCondor gives you the ability to run your app in `tls` mode `(https)`, you just need to copy your tls certificates `my-server-cert.cert` and `my-server-cert.key` to the directory `tls` at the root directory of the project, next update the `tls` config in the `.env` file or inject them to the environment with an external tool
 ```bash
 #################################
 ###            TLS            ###
 #################################
-APP_HTTPS_ON=tue
-APP_REDIRECT_HTTP_TO_HTTPS=true
-APP_HTTPS_HOST=mydomain.com
-APP_HTTPS_CERT_FILE_PATH=ssl/server.crt
-APP_HTTPS_KEY_FILE_PATH=ssl/server.key
+App_USE_HTTPS=true
+App_USE_LETSENCRYPT=false
+APP_LETSENCRYPT_EMAIL=mail@example.com
+App_HTTPS_HOSTS=example.com, www.example.com
+App_CERT_FILE_PATH=tls/my-server-cert.crt
+App_KEY_FILE_PATH=tls/my-server-cert.key
 ```
-Finally, run the app and it will be served in ssl mode.
+Finally, run the app and it will be served in `https` mode.
 
 ## Let's encrypt auto certificates 
-Using let's encrypt auto certificates is very simple, you just need to set three environment variables, and you will be good to go, here they are:
+Using `let's encrypt` is fully automated including the renewal of the certificates, you just need to set the config variables in the `.env` or inject them to the environment with an external tool
+Below is a sample of the config that will run your app in the `https` mode using `let's encrypt`
 ```bash
-APP_HTTPS_ON=true
-APP_HTTPS_USE_LETSENCRYPT=true
-APP_HTTPS_HOST=mydomain.com
+App_USE_HTTPS=true
+App_USE_LETSENCRYPT=true
+APP_LETSENCRYPT_EMAIL=mail@example.com
+App_HTTPS_HOSTS=example.com, www.example.com
+App_CERT_FILE_PATH=tls/my-server-cert.crt
+App_KEY_FILE_PATH=tls/my-server-cert.key
 ```
-Then run your app

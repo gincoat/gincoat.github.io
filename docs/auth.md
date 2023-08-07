@@ -45,7 +45,7 @@ If you ever needed to make changes to the logic, the files are located in `http/
 ### Check if a user is logged in
 Here is how you can check if a user is logged in:
 ```go
-func SomeHandler(c *gin.Context) {
+func SomeHandler(c *core.Context) {
 	Auth := auth.Resolve()
 	ok, err := Auth.Check(c)
 	if ok {
@@ -57,7 +57,7 @@ func SomeHandler(c *gin.Context) {
 ### Get logged-in user's ID
 Here is how you get the authenticated user's ID
 ```go
-func SomeHandler(c *gin.Context) {
+func SomeHandler(c *core.Context) {
 	Auth := auth.Resolve()
 	userID, err := Auth.UserID(c)
 }

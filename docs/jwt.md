@@ -2,55 +2,53 @@
 title: JWT Tokens
 ---
 
-JWT tokens are used for authentication, GoCondor provides you with ways to generate `jwt tokens`, `refresh tokens` and validatation of them.
-The configuration for JWT can be found in the `.env` file, this is where you can set things like the `secret` key and the `validity` of the tokens
+JWT tokens are used for authentication, GoCondor provides you with ways to generate `JWT tokens`, decode them and check their expiry.
+The configuration for `JWT tokens` can be found in the `.env` file and they will be injected to the environ,ent, you can also inject these values with an external tool and that will would work too, 
+The configuration helps you define things like the `secret` key and the `validity` of the tokens
 
-### Generate JWT token
-To generate a `jwt token` you can simply use the method `CreateToken` in the variable `JWT`, the variable `JWT` is available to the all your handlers, it's set in the file `http/handlers/deps.go`. here is how you can generate a token with the payload having the user id:
-```go
-func SomeHandler(c *gin.Context) {
-	payload := map[string]string{"userId": "123"}
-	token, err := JWT.CreateToken(payload)
-}
-```
-### Extract authorization token from header
-To extract the token you use the method `JWT.ExtractToken(context)` it accepts the context variable, it assumes the token is set in the header with the key `Authorization` and the value is in this format `bearer: your-token-here`, here is how you can do it:
-```go
-func SomeHandler(c *gin.Context) {
-	token, error := JWT.ExtractToken(c)
-}
-```
+#### JWT secret
+The `jwt secret` is any random string. its used to sign the `jwt token`.
+
 
 ### Decode a token
-To decode a token and extract the encoded information, you can do it like below:
+To decode a token and extract the encoded information, check the code below
 ```go
-func SomeHandler(c *gin.Context) {
-	// first let's extract the token from the request header
-	token, error := JWT.ExtractToken(c)
+package handlers
 
-	// decode
-	payload, err := JWT.DecodeToken(token)
+import (
+	"github.com/gocondor/core"
+)
+
+func ListUsers(c *core.Context) *core.Response {
+	myToken := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJKIjoiZXlKMWMyVnlTVVFpT2pFeU16UTzmUT09IiwiZXhwIjoxNzI3NzE3MjEwfQ.kR7taUIr6goFWbIFxrrsRXobGE4u5lDKLLkPQB2bPKY"
+
+	payload, err := c.GetJWT().DecodeToken(myToken)
+	if err != nil {
+		return c.Response.SetStatusCode(400).Text(err.Error())
+	}
 }
+
 ```
 
-
-### Generate JWT refresh token
-You can generate a jwt refresh token using the method `CreateRefreshToken`, here is how:
+### Check the token expiry
+To check if a token has expired or not, refer to the code below: 
 ```go
-func SomeHandler(c *gin.Context) {
-	payload := map[string]string{"userId": "123"}
-	token, err := JWT.CreateRefreshToken(payload)
-}
-```
+package handlers
 
-### Validate a token
-To check if a token is valid or not you can do it like below: 
-```go
-func SomeHandler(c *gin.Context) {
-	// first let's extract the token from the request header
-	token, error := JWT.ExtractToken(c)
+import (
+	"github.com/gocondor/core"
+)
 
-	// validate
-	ok, err := JWT.ValidateToken(token)
+func ListUsers(c *core.Context) *core.Response {
+	myToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJKIjoiZXlKMWMyVnlTVVFpT2pFeU16UTFmUT09IiwiZXhwIjoxNzI3NzE3MjEwfQ.kR7taUIr6goFWbIFxrrsRXo9GE4P5lDKLLkPQB2bPKY"
+
+	tokenHasExpired, err := c.GetJWT().HasExpired(myToken)
+	if err != nil {
+		return c.Response.SetStatusCode(400).Text(err.Error())
+	}
+
+	if tokenHasExpired {
+		// here token has expired
+	}
 }
 ```

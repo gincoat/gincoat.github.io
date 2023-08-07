@@ -2,4 +2,16 @@
 title: Relationships (Associations)
 ---
 
-To learn how to work with relationships check [GORM Associations docs](https://gorm.io/docs/belongs_to.html)
+## Belongs To
+The docs is available at [gorm belongs to relationship docs](https://gorm.io/docs/belongs_to.html)
+
+
+## Has One
+The docs is available at [gorm has one relationship docs](https://gorm.io/docs/has_one.html)
+
+## Has Many
+The docs is available at [gorm has many relationship docs](https://gorm.io/docs/has_many.html)
+
+
+## Many to Many
+The docs is available at [gorm many to many relationship docs](https://gorm.io/docs/many_to_many.html)
