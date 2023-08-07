@@ -4,28 +4,33 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import { CopyBlock, dracula, a11yDark } from "react-code-blocks";
+
 
 import styles from './index.module.css';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
+  const code = `router.Get("/", func(c *core.Context) *core.Response {
+		JsonString := \`{\"message\": \"hello world\"}\`
+		return c.Response.Json(JsonString)
+	})`
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
 
       <div class="row">
         <div class="col col--6">
-          <div class="col-demo">
+          <div class="">
 
 
-
-          <h1 className="hero__title">{siteConfig.title}</h1>
+        <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            to="/docs/getting-started">
+            Get Started
           </Link>
         </div>
 
@@ -33,9 +38,20 @@ function HomepageHeader() {
           </div>
         </div>
         <div class="col col--6">
-          <div class="col-demo">
+          <div class="code-show">
 
-            
+            <CopyBlock
+              text={code}
+              language={"go"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+              wrapLines={true}
+            />
+
+
+
+
 
           </div>
         </div>
@@ -55,7 +71,7 @@ export default function Home() {
       description="GoCondor is a Golang Framework for building APIs">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        {/* <HomepageFeatures /> */}
       </main>
     </Layout>
   );
