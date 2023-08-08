@@ -5,11 +5,11 @@ All request information like `form data`, `uploaded files`, `headers`,...etc can
 
 ### URL Parameters
 URL path parameters can be defined by prefixing the parameter name with `:`. 
-Here is an example for defining a path parameter
+Here is an example of defining a path parameter
 ```go title="file: routes.go"
 router.Get("users/:id", handlers.GetUsers)
 ```
-Here is an example for accessing it
+Here is an example of accessing it
 ```go title="file handlers/users.go"
 func GetUsers(c *core.Context) {
     userID := c.GetPathParam("id")
@@ -18,7 +18,7 @@ func GetUsers(c *core.Context) {
 ```
 
 ### Query and form post parameters
-Query parameters are passed to the url like this `/users?name=jack`, both query parameters and the form post data can be accessed with the function `GetRequestParam("PARAM_NAME")`, here is an example:
+Query parameters are passed to the URL like this `/users?name=jack`, both query parameters and the form post data can be accessed with the function `GetRequestParam("PARAM_NAME")`, here is an example:
 ```go
 func listUsers(c *core.Context) {
     name := c.GetRequestParam("name")

@@ -4,7 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import { CopyBlock, dracula, a11yDark } from "react-code-blocks";
+import { CopyBlock, dracula, CodeBlock } from "react-code-blocks";
 
 
 import styles from './index.module.css';
@@ -12,9 +12,10 @@ import styles from './index.module.css';
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   const code = `router.Get("/", func(c *core.Context) *core.Response {
-		JsonString := \`{\"message\": \"hello world\"}\`
-		return c.Response.Json(JsonString)
-	})`
+        JsonString := \`{\"message\": \"hello world\"}\`
+        return c.Response.Json(JsonString)
+})
+`
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -71,7 +72,7 @@ export default function Home() {
       description="GoCondor is a Golang Framework for building APIs">
       <HomepageHeader />
       <main>
-        {/* <HomepageFeatures /> */}
+        <HomepageFeatures />
       </main>
     </Layout>
   );

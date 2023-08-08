@@ -2,9 +2,9 @@
 title: Cache
 ---
 
-GoCondor uses `Redis` for cache and its disabled by default, you can enable it in the file `config/cache.go` by setting the attribute `EnableCache` to `true`, then add `Redis connection information` to the `.env` if you are using it. otherwise you can use an external tool to inject these variables to the environment
+GoCondor uses `Redis` for cache and its disabled by default, you can enable it in the file `config/cache.go` by setting the attribute `EnableCache` to `true`, then add `Redis connection information` to the `.env` if you are using it. otherwise, you can use an external tool to inject these variables into the environment
 
- Here is a sample of the `Redis connection information` in the `.env` file:
+ Here is a sample of the `Redis connection information in the `.env` file:
 ```bash
 #######################################
 ######            CACHE          ######
@@ -21,26 +21,26 @@ REDIS_DB=0
 package handlers
 
 import (
-	"github.com/gocondor/core"
+    "github.com/gocondor/core"
 )
 
 func Login(c *core.Context) *core.Response {
-	err := c.GetCache().Set("userID", 12345)
+    err := c.GetCache().Set("userID", 12345)
 }
 ```
 
-#### Set values in the cache with expiration date
+#### Set values in the cache with an expiration date
 ```go
 package handlers
 
 import (
-	"github.com/gocondor/core"
+    "github.com/gocondor/core"
 )
 
 func Login(c *core.Context) *core.Response {
-	hours24 := time.Duration(time.Hour * 24) // 24 hours duration
-	afterHours24: time.Now().Add(hours24) // the date after 24 hours from now
-	err := c.GetCache().SetWithExpiration("userID", 12345, afterHours24) // expires after 24 hours
+    hours24 := time.Duration(time.Hour * 24) // 24 hours duration
+    afterHours24: time.Now().Add(hours24) // the date after 24 hours from now
+    err := c.GetCache().SetWithExpiration("userID", 12345, afterHours24) // expires after 24 hours
 }
 ```
 
@@ -52,11 +52,11 @@ Here is how you can get values from cache
 package handlers
 
 import (
-	"github.com/gocondor/core"
+    "github.com/gocondor/core"
 )
 
 func Login(c *core.Context) *core.Response {
-	userID, err := c.GetCache().Get("userID")
+    userID, err := c.GetCache().Get("userID")
 }
 ```
 
@@ -66,10 +66,10 @@ Here is how you can delete something from the cache
 package handlers
 
 import (
-	"github.com/gocondor/core"
+    "github.com/gocondor/core"
 )
 
 func Login(c *core.Context) *core.Response {
-	err := c.GetCache().Delete("userID")
+    err := c.GetCache().Delete("userID")
 }
 ```

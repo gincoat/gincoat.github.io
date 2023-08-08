@@ -2,10 +2,19 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
+// Routing
+// Middlewares
+// Validation
+// Databases ORM (GORM integrated)
+// Emails
+// JWT tokens
+// Caching (Redis)
+// HTTPS (TLS)
+
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Routing',
+    Svg: require('@site/static/img/routing.svg').default,
     description: (
       <>
         Docusaurus was designed from the ground up to be easily installed and
@@ -14,8 +23,8 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Middlewares',
+    Svg: require('@site/static/img/middleware.svg').default,
     description: (
       <>
         Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
@@ -24,8 +33,8 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Validation',
+    Svg: require('@site/static/img/validation.svg').default,
     description: (
       <>
         Extend or customize your website layout by reusing React. Docusaurus can
@@ -33,6 +42,56 @@ const FeatureList = [
       </>
     ),
   },
+  {
+    title: 'Databases (GORM)',
+    Svg: require('@site/static/img/database.svg').default,
+    description: (
+      <>
+        Docusaurus was designed from the ground up to be easily installed and
+        used to get your website up and running quickly.
+      </>
+    ),
+  },
+  {
+    title: 'Emails',
+    Svg: require('@site/static/img/emails.svg').default,
+    description: (
+      <>
+        Docusaurus was designed from the ground up to be easily installed and
+        used to get your website up and running quickly.
+      </>
+    ),
+  },
+  {
+    title: 'JWT tokens',
+    Svg: require('@site/static/img/jwt.svg').default,
+    description: (
+      <>
+        Docusaurus was designed from the ground up to be easily installed and
+        used to get your website up and running quickly.
+      </>
+    ),
+  },
+  {
+    title: 'Caching (Redis)',
+    Svg: require('@site/static/img/cache.svg').default,
+    description: (
+      <>
+        Docusaurus was designed from the ground up to be easily installed and
+        used to get your website up and running quickly.
+      </>
+    ),
+  },
+  {
+    title: 'HTTPS (TLS)',
+    Svg: require('@site/static/img/tls.svg').default,
+    description: (
+      <>
+        Docusaurus was designed from the ground up to be easily installed and
+        used to get your website up and running quickly.
+      </>
+    ),
+  }
 ];
 
 function Feature({Svg, title, description}) {

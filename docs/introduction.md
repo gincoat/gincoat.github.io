@@ -3,7 +3,7 @@ title: Introduction
 slug: /
 ---
 
-GoCondor is a Golang web framework made for building web APIs, suitable for small & medium size projects and microservices. with its simple structure, developer friendly experience it makes developers happily more productive.
+GoCondor is a Golang web framework made for building web APIs, suitable for small & medium size projects and microservices. with its simple structure and developer-friendly experience, it makes developers happily more productive.
 
 ## Features 
 - Routing
@@ -16,7 +16,7 @@ GoCondor is a Golang web framework made for building web APIs, suitable for smal
 - HTTPS (TLS)
 
 ## Architecture
-The architecture is similar to `MVC`, where there is a routes file `./routes.go` in which you can map all your app routes to their handlers which reside in the directory `./handlers`. Handlers are simply methods that handle requests (GET, POST, ... etch) to the given routes.
+GoCondor's architecture is similar to `MVC`, it has a routes file `./routes.go` in which you can map all your app routes to their handlers which are located in the directory `./handlers`. Handlers are simply methods that handle requests (GET, POST, ... etc) to the given routes.
 
 #### The request journey:
 `Request -> Router -> Optional Middleware -> Handler -> Optional Middleware ->  Response`

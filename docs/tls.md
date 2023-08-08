@@ -17,7 +17,7 @@ App_KEY_FILE_PATH=tls/my-server-cert.key
 Finally, run the app and it will be served in `https` mode.
 
 ## Let's encrypt auto certificates 
-Using `let's encrypt` is fully automated including the renewal of the certificates, you just need to set the config variables in the `.env` or inject them to the environment with an external tool
+Using `let's encrypt` is fully automated including the renewal of the certificates, you just need to set the config variables in the `.env` or inject them into the environment with an external tool
 Below is a sample of the config that will run your app in the `https` mode using `let's encrypt`
 ```bash
 App_USE_HTTPS=true

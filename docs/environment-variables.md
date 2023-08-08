@@ -95,5 +95,4 @@ SENDGRID_API_KEY=sendgrid-api-key-here # the api key
 MAILGUN_DOMAIN=your-domain.com # your domain
 MAILGUN_API_KEY=mailgun-api-key-here # the api key
 MAILGUN_TLS_SKIP_VERIFY_HOST=true # (set true for development only!)
-
 ```

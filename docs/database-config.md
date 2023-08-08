@@ -8,7 +8,7 @@ GoCondor uses [GORM](https://gorm.io/) to query the database, all the features o
 `GORM` is disabled by default, you can enable it in the file `condfig/gorm.go` by setting the attribute `EnableGorm` to `true`
 
 #### The database connection config
-`GORM configuration` can be set in the `.env` file, the configuration also can be injected to the environment by using an external tool
+`GORM configuration` can be set in the `.env` file, the configuration also can be injected into the environment by using an external tool
 Here is a sample of the configuration:
 ```bash
 #######################################

@@ -1,7 +1,7 @@
 ---
 title: Response
 ---
-Below is the different types of responses you can return to the user
+Below are the different types of responses you can return to the user
 
 ## Return JSON
 ```go
