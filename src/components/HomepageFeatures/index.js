@@ -17,68 +17,7 @@ const FeatureList = [
     Svg: require('@site/static/img/routing.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
-  },
-  {
-    title: 'Middlewares',
-    Svg: require('@site/static/img/middleware.svg').default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: 'Validation',
-    Svg: require('@site/static/img/validation.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
-  },
-  {
-    title: 'Databases (GORM)',
-    Svg: require('@site/static/img/database.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
-  },
-  {
-    title: 'Emails',
-    Svg: require('@site/static/img/emails.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
-  },
-  {
-    title: 'JWT tokens',
-    Svg: require('@site/static/img/jwt.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
-  },
-  {
-    title: 'Caching (Redis)',
-    Svg: require('@site/static/img/cache.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Define your routes in a very simple way and map them their handlers.
       </>
     ),
   },
@@ -87,8 +26,70 @@ const FeatureList = [
     Svg: require('@site/static/img/tls.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+       Add your TLS certificates and run your app in https mode..
+      </>
+    ),
+  },
+  {
+    title: 'Let\'s Encrypt auto certs',
+    Svg: require('@site/static/img/letsencrypt.svg').default,
+    description: (
+      <>
+        Fully managed let's encrypt certificates supported with auto renewal.
+      </>
+    ),
+  },
+  {
+    title: 'Databases (GORM)',
+    Svg: require('@site/static/img/database.svg').default,
+    description: (
+      <>
+        GORM is fully integrated to help you query your MYSQL, Postgres, and SQlite databases.
+      </>
+    ),
+  },
+  {
+    title: 'Middlewares',
+    Svg: require('@site/static/img/middleware.svg').default,
+    description: (
+      <>
+        Assign middlewares per-route or globally, before the processing the request or after.
+      </>
+    ),
+  },
+  {
+    title: 'Validation',
+    Svg: require('@site/static/img/validation.svg').default,
+    description: (
+      <>
+        Simplified data validation with over 30 validation rules suppored.
+      </>
+    ),
+  },
+  {
+    title: 'Emails',
+    Svg: require('@site/static/img/emails.svg').default,
+    description: (
+      <>
+       Simple way to send emails via SMTP, SparkPost, SendGrid or MailGun.
+      </>
+    ),
+  },
+  {
+    title: 'JWT tokens',
+    Svg: require('@site/static/img/jwt.svg').default,
+    description: (
+      <>
+        Generate, decode, and check the expiry of JWT tokens to easily manage users authentication.
+      </>
+    ),
+  },
+  {
+    title: 'Caching (Redis)',
+    Svg: require('@site/static/img/cache.svg').default,
+    description: (
+      <>
+        Redis integration to cache your data in simple way with control over TTL.
       </>
     ),
   }
