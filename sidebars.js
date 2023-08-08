@@ -20,9 +20,9 @@ const sidebars = {
       type: 'category',
       label: 'GoCondor Docs',
       items: [
-        'introduction',
         'installation',
         'getting-started',
+        'introduction',
         'environment-variables',
         'routing', 
         'handlers',
