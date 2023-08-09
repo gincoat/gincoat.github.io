@@ -2,10 +2,10 @@
 title: Middlewares
 ---
 Middlewares are located in the directory `middlewares` in the root directory of the project
-Middlewares in GoCondor are functions with the type `core.Middleware`
+A Middleware in GoCondor is simply a `function` of the type `core.Middleware` that gets assigned to a `variable`.
 
-#### Middleware to be executed before processing the request
-Below is an example of a middleware that gets executed before processing the request
+#### A Middleware to be executed before processing the request
+In case the logic gets defined `before` calling the function `c.Next()`. Below an example of a middleware that gets executed before processing the request
 ```go
 package middlewares
 
@@ -15,14 +15,19 @@ import (
     "github.com/gocondor/core"
 )
 
-var ExampleMiddleware core.Middleware = func(c *core.Context) {
+var myMiddleware core.Middleware = func(c *core.Context) {
     // Logic goes here ...
     c.Next()
 }
 ```
+to assign this middleware `myMiddleware` to a specific route, check the code below:
+```go
+router.Get("/", handlers.Login, middlewares.myMiddleware)
+```
 
-#### Middleware to be executed after processing the request
-Below is an example of a middleware that gets executed after processing the request
+
+#### A Middleware to be executed after processing the request
+In case the logic gets defined `after` calling the function `c.Next()`. Below an example of a middleware that gets executed after processing the request
 
 ```go
 package middlewares
@@ -33,13 +38,30 @@ import (
     "github.com/gocondor/core"
 )
 
-var ExampleMiddleware core.Middleware = func(c *core.Context) {
+var myMiddleware core.Middleware = func(c *core.Context) {
     c.Next()
     // Logic goes here ...
 }
 ```
+to assign this middleware `myMiddleware` to a specific route, check the code below:
+```go
+router.Get("/", handlers.Login, middlewares.myMiddleware)
+```
+#### Assigning multiple middlewares to routes
+Here is how you can assign more than one middleware to a specific route 
+```go
+router.Get("/", 
+    handlers.Login, 
+    middlewares.myMiddleware1, 
+    middlewares.myMiddleware2
+    middlewares.myMiddleware3
+)
+```
+Note:
+Route middlewares are always passed as `third`, `fourth`, `fifth`,...etc arguments, right after the `handler` regardless of the middleware been a `before request processing middleware` or an `after request processing middleware`
+
 #### Return response from the middleware 
-Sometimes you might want to return the response to the user from the middleware not from the handler, below is how you can achieve that
+Sometimes you might want to return the response to the user from the middleware, you can achieve that by simply calling the function `ForceSendResponse()` on the context object.
 ```go
 package middlewares
 
@@ -47,12 +69,12 @@ import (
     "github.com/gocondor/core"
 )
 
-var HandleNotFound core.Middleware = func(c *core.Context) {
+var UnauthorizedCheck core.Middleware = func(c *core.Context) {
     // Logic goes here ...
     c.Response.
-        SetStatusCode(404).
+        SetStatusCode(401).
         SetContentType("text/html").
-        HTML("<h1>Not found.</h1>").
+        HTML("<h1>unauthorized.</h1>").
         ForceSendResponse()
 
     c.Next()

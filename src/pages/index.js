@@ -14,8 +14,7 @@ function HomepageHeader() {
   const code = `router.Get("/", func(c *core.Context) *core.Response {
         JsonString := \`{\"message\": \"hello world\"}\`
         return c.Response.Json(JsonString)
-})
-`
+})`
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -39,19 +38,16 @@ function HomepageHeader() {
           </div>
         </div>
         <div class="col col--6">
-          <div class="code-show">
+          <div className={styles.codeShow}>
 
             <CopyBlock
               text={code}
               language={"go"}
-              showLineNumbers={false}
+              showLineNumbers={true}
               theme={dracula}
               codeBlock
               wrapLines={true}
             />
-
-
-
 
 
           </div>

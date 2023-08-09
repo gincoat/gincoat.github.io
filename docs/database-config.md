@@ -35,4 +35,3 @@ POSTGRES_TIMEZONE=Asia/Dubai
 #_____ SQLITE _____#
 SQLITE_DB_PATH=storage/sqlite/db.sqlite
 ```
-more information available at [GORM docs website](https://gorm.io/docs/)

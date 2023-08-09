@@ -7,17 +7,22 @@ Below is an example for validating an input of `email` and `password`
 ```go
 func Login(c *core.Context) *core.Response {
     v := c.GetValidator()
+    // the data
     data := map[string]interface{}{
         "email":    "mail@example.com",
         "password": "secret",
     }
+    // the validation rules
     rules := map[string]interface{}{
         "email":    "required|email",
         "password": "required|length:6,10",
     }
+    // Validate
     vResult := v.Validate(data, rules)
-    errorsJson := vResult.GetErrorMessagesJson()
+    // check to see if validation failed
     if vResult.Failed() {
+        // get error messages in json format
+        errorsJson := vResult.GetErrorMessagesJson()
         return c.Response.SetStatusCode(422).Json(errorsJson)
     }
     // Proceed with logging in the user

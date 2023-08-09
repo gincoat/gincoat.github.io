@@ -35,11 +35,13 @@ const sidebars = {
         //'auth',
         'cache', 
         'tls',
-        'contribute',
+        `hashing`,
+        `emails`,
         'database-config',
         'database-models',
         'database-crud',
-        'database-relationships'
+        'database-relationships',
+        'contribute',
       ],
     }
   ],

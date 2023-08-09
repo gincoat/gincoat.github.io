@@ -1,8 +1,9 @@
 ---
 title: Getting Started
 ---
-Let's create a route that returns `hello world`
-Open up the file `routes.go` in the root of your project and add to it the code below:
+Let's create a route that returns `hello world`.
+
+Open up the file `routes.go` you can find it in the root of your project. add the following code below:
 ```go "defining a route"
     router.Get("/", func(c *core.Context) *core.Response {
         JsonString := `{"message": "hello world"}`
@@ -14,7 +15,7 @@ Next, build the project by running the following command in the terminal:
 ```go
 go build -o ./
 ```
-this will produce an executable file with the name of your project in the root directory of your project
+this will produce an executable file with the same name of your project in the root directory.
 
 Next, run the executable file using the following command:
 ```go

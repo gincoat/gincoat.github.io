@@ -1,7 +1,7 @@
 ---
 title: Request
 ---
-All request information like `form data`, `uploaded files`, `headers`,...etc can be accessed using the context.
+All request information like `posted data`, `uploaded files`, `headers`,...etc can be accessed using the context.
 
 ### URL Parameters
 URL path parameters can be defined by prefixing the parameter name with `:`. 
@@ -17,7 +17,7 @@ func GetUsers(c *core.Context) {
 
 ```
 
-### Query and form post parameters
+### Query and form's post parameters
 Query parameters are passed to the URL like this `/users?name=jack`, both query parameters and the form post data can be accessed with the function `GetRequestParam("PARAM_NAME")`, here is an example:
 ```go
 func listUsers(c *core.Context) {
@@ -58,6 +58,6 @@ func SaveFile(c *core.Context) {
 Here is how you can get headers:
 ```go
 func ListTodos(c *core.Context) {
-    tokenStr := c.GetHeader("Authorization")
+    realIPAddress := c.GetHeader("X-Forwarded-For")
 }
 ```

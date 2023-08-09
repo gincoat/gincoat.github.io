@@ -44,8 +44,6 @@ func Login(c *core.Context) *core.Response {
 }
 ```
 
-
-
 #### Get values from cache
 Here is how you can get values from cache
 ```go

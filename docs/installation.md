@@ -13,10 +13,12 @@ go install github.com/gocondor/installer/gocondor@latest
 #### Create a new project:
 The command for creating a new project is the following:
 ```bash
-gocondor new [project-name] [remote-location]
-# example:
-# gocondor new my-project github.com/gocondor/my-project
+gocondor new [project-name] [remote-repository]
+```
+Example
+```bash
+gocondor new my-project github.com/gocondor/my-project
 ```
 where:
 `project-name` is the name of your project
-`remote-location` is the remote repository that will host the project, usually `github.com` is used.
+`remote-repository` is the remote repository that will host the project, usually `github.com` is used.

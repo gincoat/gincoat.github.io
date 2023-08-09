@@ -7,8 +7,27 @@ The configuration for `JWT tokens` can be found in the `.env` file and they will
 The configuration helps you define things like the `secret` key and the `validity` of the tokens
 
 #### JWT secret
-The `jwt secret` is any random string. it's used to sign the `jwt token`.
+The `jwt secret` is a random string. it's used to sign the `jwt token`, its recommended to have it's a minimum of `6` characters.
+Remember to always keep your `JWT secret` secret.
 
+#### Generate JWT tokens
+Here is how to generate a JWT token 
+```go
+package handlers
+
+import (
+    "github.com/gocondor/core"
+)
+
+func Login(c *core.Context) *core.Response {
+    // prepare the payload
+    payload := map[string]interface{}{
+        "userID": 12345
+    }
+    // generate the token
+    tokenStr, err := c.GetJWT().GenerateToken(payload)
+}
+```
 
 ### Decode a token
 To decode a token and extract the encoded information, check the code below
@@ -19,15 +38,13 @@ import (
     "github.com/gocondor/core"
 )
 
-func ListUsers(c *core.Context) *core.Response {
-    myToken := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJKIjoiZXlKMWMyVnlTVVFpT2pFeU16UTzmUT09IiwiZXhwIjoxNzI3NzE3MjEwfQ.kR7taUIr6goFWbIFxrrsRXobGE4u5lDKLLkPQB2bPKY"
-
+func Login(c *core.Context) *core.Response {
+    myToken := "my-jwt-token-string"
     payload, err := c.GetJWT().DecodeToken(myToken)
     if err != nil {
         return c.Response.SetStatusCode(400).Text(err.Error())
     }
 }
-
 ```
 
 ### Check the token expiry
@@ -39,9 +56,8 @@ import (
     "github.com/gocondor/core"
 )
 
-func ListUsers(c *core.Context) *core.Response {
-    myToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJKIjoiZXlKMWMyVnlTVVFpT2pFeU16UTFmUT09IiwiZXhwIjoxNzI3NzE3MjEwfQ.kR7taUIr6goFWbIFxrrsRXo9GE4P5lDKLLkPQB2bPKY"
-
+func Login(c *core.Context) *core.Response {
+    myToken := "my-jwt-token-string"
     tokenHasExpired, err := c.GetJWT().HasExpired(myToken)
     if err != nil {
         return c.Response.SetStatusCode(400).Text(err.Error())

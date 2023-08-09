@@ -31,3 +31,7 @@ code {
   background-color: transparent;
   text-align: left;
 }
+
+.codeShow {
+  padding-top: 40px!important;
+}

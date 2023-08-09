@@ -30,17 +30,17 @@ func SomeHandler(c *core.Context) {
     return c.Response.Any(anyResponse)
 }
 ```
+## Set response headers
+```go
+func SomeHandler(c *core.Context) {
+    return c.Response.SetHeader("key", "value").Json(myJson)
+}
+```
 
 ## Set response content type
 ```go
 func SomeHandler(c *core.Context) {
     return c.Response.SetContentType("application/json").any(myJson)
-}
-```
-## Set response headers
-```go
-func SomeHandler(c *core.Context) {
-    return c.Response.SetHeader("key", "value").Json(myJson)
 }
 ```
 ## Set response status code

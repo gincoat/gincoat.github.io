@@ -2,8 +2,9 @@
 title: Handlers
 ---
 
-A Handler is nothing but a function to handle the HTTP request
-Here is an example of a handler function to list users
+A Handler is nothing but a function to handle the HTTP requests to the matching route.
+
+Here is an example for a handler function to list users
 ```go title="#file: handlers/users.go"
 package handlers
 
@@ -16,14 +17,14 @@ func ListUsers(c *core.Context) *core.Response {
 }
 ```
 
-### How to organize the handlers
+### Organizing handlers
 The best way to organize handlers is to think of them like `controller's actions` in `MVC`.
-You can simply group all handlers of the same resource in one file.
+You can simply group all handlers of the same resource in one file and prefix the name of the handler with the name of the resource like: `CreateUsers`, `ListUsers` and so on.
 here is an example:
-Imaging we are creating an app for handling `todos`, in this app we have `users` and the `users` have `todos` here is how we can organize the handlers of both the `users` and the `todos`
+Imaging we are creating an app for handling `todos`, in this app we have `users` and `todos` here is how we can organize the handlers of both the `users` and the `todos`
 
 
-1- The handlers of users
+1- The handlers of `users` related requests goes to the file `handlers/users.go`
 ```go title="#file: handlers/users.go"
 package handlers
 
@@ -45,7 +46,7 @@ func DeleteUsers(c *core.Context) *core.Response {
 
 ```
 
-1- the handlers of todos
+1- the handlers of `todos` related requests goes to the file `handlers/todos.go`
 ```go
 package handlers
 
