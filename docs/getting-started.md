@@ -1,25 +1,18 @@
 ---
 title: Getting Started
 ---
-Let's create a route that returns `hello world`.
-
-Open up the file `routes.go` you can find it in the root of your project. add the following code below:
+Let's create a route that returns `hello world`
+Open up the file `routes.go` in the root of your project and add to it the code below:
 ```go "defining a route"
-    router.Get("/", func(c *core.Context) *core.Response {
-        JsonString := `{"message": "hello world"}`
+	router.Get("/", func(c *core.Context) *core.Response {
+		JsonString := `{"message": "hello world"}`
 
-        return c.Response.Json(JsonString)
-    })
+		return c.Response.Json(JsonString)
+	})
 ```
-Next, build the project by running the following command in the terminal:
+Next, in your terminal navigate to the project dir and run the following command:
 ```go
-go build -o ./
-```
-this will produce an executable file with the same name of your project in the root directory.
-
-Next, run the executable file using the following command:
-```go
-./[name-of-the-executable-file]
+gocondor run:dev
 ```
 Finally, open up your browser and navigate to `localhost:8000`
 
