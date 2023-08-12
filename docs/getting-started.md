@@ -11,7 +11,7 @@ Open up the file `routes.go` in the root of your project and add to it the code 
 		return c.Response.Json(JsonString)
 	})
 ```
-Next, in your terminal navigate to the project dir and run the following command:
+Next, in your terminal navigate to the project dir and run the following command to start the `live reloading`:
 ```go
 gocondor run:dev
 ```
