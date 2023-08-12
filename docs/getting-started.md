@@ -1,6 +1,7 @@
 ---
 title: Getting Started
 ---
+First make sure you have [GoCondor's cli](https://gocondor.github.io/docs/installation) installed.
 Let's create a route that returns `hello world`
 Open up the file `routes.go` in the root of your project and add to it the code below:
 ```go "defining a route"

@@ -1,11 +1,12 @@
 ---
 title: Middlewares
 ---
-Middlewares are located in the directory `middlewares` in the root directory of the project
-A Middleware in GoCondor is simply a `function` of the type `core.Middleware` that gets assigned to a `variable`.
+A Middleware is a pieces of functional that gets executed either before handling the request or after.
+Mddlewares are located in the directory `middlewares/` in the root directory of the project.
+A Middleware in GoCondor is simply a `function` of type `core.Middleware` that gets assigned to routes so that it can be executed before or after the execution of the request's [handler](https://gocondor.github.io/docs/handlers).
 
 #### A Middleware to be executed before processing the request
-In case the logic gets defined `before` calling the function `c.Next()`. Below an example of a middleware that gets executed before processing the request
+In case the logic gets defined `before` calling the function `c.Next()`. Below an example of a middleware to executed before processing the request
 ```go
 package middlewares
 
@@ -20,14 +21,13 @@ var myMiddleware core.Middleware = func(c *core.Context) {
     c.Next()
 }
 ```
-to assign this middleware `myMiddleware` to a specific route, check the code below:
+to assign this middleware `myMiddleware` to a specific route, simply pass it as a third parameter to the route's definition, check this code below for more info:
 ```go
 router.Get("/", handlers.Login, middlewares.myMiddleware)
 ```
 
-
 #### A Middleware to be executed after processing the request
-In case the logic gets defined `after` calling the function `c.Next()`. Below an example of a middleware that gets executed after processing the request
+In case the logic gets defined `after` calling the function `c.Next()`. Below an example of a middleware to be executed after processing the request
 
 ```go
 package middlewares
@@ -43,12 +43,12 @@ var myMiddleware core.Middleware = func(c *core.Context) {
     // Logic goes here ...
 }
 ```
-to assign this middleware `myMiddleware` to a specific route, check the code below:
+to assign this middleware `myMiddleware` to a specific route, simply pass it as a third parameter to the route's definition, check the code below:
 ```go
 router.Get("/", handlers.Login, middlewares.myMiddleware)
 ```
 #### Assigning multiple middlewares to routes
-Here is how you can assign more than one middleware to a specific route 
+You can simply pass them as a `second`, `third`, `fourth`, ...etc parameters to the route's definition, regardless of the middleware been a `before request handling middleware` or an `after request handling middleware`, here is how:
 ```go
 router.Get("/", 
     handlers.Login, 
@@ -57,11 +57,9 @@ router.Get("/",
     middlewares.myMiddleware3
 )
 ```
-Note:
-Route middlewares are always passed as `third`, `fourth`, `fifth`,...etc arguments, right after the `handler` regardless of the middleware been a `before request processing middleware` or an `after request processing middleware`
 
 #### Return response from the middleware 
-Sometimes you might want to return the response to the user from the middleware, you can achieve that by simply calling the function `ForceSendResponse()` on the context object.
+Sometimes you might want to return the response to users from the middleware, you can achieve that by simply calling the function `ForceSendResponse()` on the `Response` property on the context object.
 ```go
 package middlewares
 
@@ -81,16 +79,9 @@ var UnauthorizedCheck core.Middleware = func(c *core.Context) {
 }
 ```
 
-#### Register a middleware to a specific route
-Here is how to register the middleware to a specific route
-```go
-    router.Get("/", handlers.Login, middlewares.ExampleMiddleware)
-```
-
 #### Registering a middleware globally to all routes
-You can register middlewares globally in the file `register-global-middlewares.go` in the root dir.
-Simply pass the middleware as an argument to the function `core.UseMiddleware(your-middleware)`.
-Here is how you can achieve that 
+You can register middlewares globally in the file `/register-global-middlewares.go` in the root directory of the project.
+Simply pass the middleware as an argument to the function `core.UseMiddleware(your-middleware)`, here is how:
 ```go
 package main
 
@@ -111,4 +102,4 @@ func registerGlobalMiddlewares() {
 ```
 
 #### Note
-Always remember to call `c.Next()` function in your middlewares
+Always remember to call `c.Next()` function in your middlewares in the right place

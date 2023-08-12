@@ -7,7 +7,7 @@ To create a new GoCondor project you need to install the `gocondor cli` first
 #### Install GoCondor cli
 To install the `gocondor cli` globally open up your terminal and run the following command:
 ```bash
-go install github.com/gocondor/installer/gocondor@latest
+go install github.com/gocondor/cli/gocondor@latest
 ```
 
 #### Create a new project:
