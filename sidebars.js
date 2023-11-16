@@ -37,6 +37,7 @@ const sidebars = {
         'tls',
         `hashing`,
         `emails`,
+        `events`,
         'database-config',
         'database-models',
         'database-crud',
