@@ -70,7 +70,7 @@ var AuthCheck core.Middleware = func (c *core.Context) {
 #### Generate a model
 To generate a model with the name `user` run the following command
 ```bash
-gaffer gen:model user
+gaffer gen:model User
 ```
 this command with generate the file `models/user.go` with the following code
 ```go
@@ -78,13 +78,13 @@ package models
 
 import "gorm.io/gorm"
 
-type user struct {
+type User struct {
 	gorm.Model
 	// add your field here...
 }
 
 // Override the table name
-func (user) TableName() string {
+func (User) TableName() string {
 	return "users"
 }
 
