@@ -42,6 +42,7 @@ const sidebars = {
         'database-models',
         'database-crud',
         'database-relationships',
+        `gaffer`,
         'contribute',
       ],
     }

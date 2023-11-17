@@ -2,22 +2,22 @@
 title: Installation
 ---
 
-To create a new GoCondor project you need to install the `gocondor cli` first
+To create a new GoCondor project you need to install `gaffer` first which is the `cli tool` for `GoCondor`
 
-#### Install GoCondor cli
-To install the `gocondor cli` globally open up your terminal and run the following command:
+#### Install Gaffer cli
+To install the `gaffer` globally open up your terminal and run the following command:
 ```bash
-go install github.com/gocondor/cli/gocondor@latest
+go install github.com/gocondor/gaffer@latest
 ```
 
 #### Create a new project:
 The command for creating a new project is the following:
 ```bash
-gocondor new [project-name] [remote-repository]
+gaffer new [project-name] [project-remote-repository]
 ```
 Example
 ```bash
-gocondor new my-project github.com/gocondor/my-project
+gaffer new myapp github.com/gocondor/myapp
 ```
 where:
 `project-name` is the name of your project
