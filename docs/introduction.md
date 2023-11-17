@@ -25,20 +25,23 @@ GoCondor's architecture is similar to `MVC`, it has a routes file `./routes.go` 
 ## Directory structure 
 ```bash
 ├── gocondor
-│   ├── config/ --------------------------> main configs
-│   ├── handlers/ ------------------------> request handlers
-│   ├── logs/ ----------------------------> log files
-│   ├── middlewares/ ---------------------> routes middlewares
-│   ├── models/ --------------------------> database models
-│   ├── tls/ -----------------------------> tls certificates
-│   ├── storage/ -------------------------> a place to store files
-│   ├── .env -----------------------------> variables to be injected to the environment
-│   ├── .gitignore -----------------------> .gitignore
-│   ├── go.mod ---------------------------> project dependencies
-│   ├── LICENSE --------------------------> license
-│   ├── main.go --------------------------> main go file
-│   ├── README.md ------------------------> readme file
-│   ├── register-global-middlewares.go ---> register middlewares globally
-│   ├── routes.go ------------------------> app routes
-│   ├── run-auto-migrations.go -----------> database migrations
+│   ├── config/ --------------------------> main configs
+│   ├── events/ --------------------------> contains events
+│	│	├── jobs/ ------------------------> contains the event jobs
+│   ├── handlers/ ------------------------> route's handlers
+│   ├── logs/ ----------------------------> app log files
+│   ├── middlewares/ ---------------------> app middlewares
+│   ├── models/ --------------------------> database models
+│   ├── storage/ -------------------------> a place to store files
+│   ├── tls/ -----------------------------> tls certificates
+│   ├── .env -----------------------------> environment variables 
+│   ├── .gitignore -----------------------> .gitignore
+│   ├── go.mod ---------------------------> Go modules
+│   ├── LICENSE --------------------------> license
+│   ├── main.go --------------------------> go main file
+│   ├── README.md ------------------------> readme file
+│   ├── register-events.go ---------------> register events and jobs
+│   ├── register-global-middlewares.go ---> register global middlewares
+│   ├── routes.go ------------------------> app routes
+│   ├── run-auto-migrations.go -----------> database migrations
 ```
