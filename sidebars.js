@@ -32,7 +32,7 @@ const sidebars = {
         'validation', 
         'middlewares',
         'jwt',
-        //'auth',
+        'authentication',
         'cache', 
         'tls',
         `hashing`,
