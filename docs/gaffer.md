@@ -18,8 +18,8 @@ gaffer new myapp github.com/gocondor/myapp
 where:
 `project-name` is the name of your project
 `remote-repository` is the remote repository that will host the project, usually `github.com` is used.
-### Running the project in hot reloading mode
-For development purposes you might want to run your project in `hot reloading` mode, here is how you can do that.
+### Running the project in live reloading mode
+For development purposes you might want to run your project in `live reloading` mode, here is how you can do that.
 First `cd` into the project directory and then run
 ```bash
 gaffer run:dev

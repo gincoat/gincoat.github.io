@@ -22,7 +22,7 @@ Here is an example of GoCondor's environment variables in the `.env` file
 APP_NAME=GoCondor
 APP_ENV=local  # local | testing | production
 App_HTTP_HOST=localhost
-App_HTTP_PORT=8000
+App_HTTP_PORT=80
 App_USE_HTTPS=false
 App_USE_LETSENCRYPT=false
 APP_LETSENCRYPT_EMAIL=mail@example.com

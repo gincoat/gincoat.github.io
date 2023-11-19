@@ -7,14 +7,14 @@ GoCondor is a Golang web framework made for building web APIs, suitable for smal
 
 ## Features 
 - Routing
-- HTTPS (TLS)
-- Let's Encrypt Auto Renewal
 - Middlewares
-- Databases ORM (GORM integrated)
-- JWT tokens
-- Validation
+- Data Validation
+- Databases ORM ([GORM](https://gorm.io/) integrated)
+- Events
 - Emails
+- JWT tokens
 - Cache (Redis)
+- HTTPS (TLS)
 
 ## Architecture
 GoCondor's architecture is similar to `MVC`, it has a routes file `./routes.go` in which you can map all your app routes to their handlers, Handlers are located in the directory `./handlers`, and they are simply functions that gets called whenever a requests (GET, POST, ... etc) to the matching route is received.
