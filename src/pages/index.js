@@ -11,7 +11,7 @@ import styles from './index.module.css';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
-  const code = `router.Get("/", func(c *core.Context) *core.Response {
+  const code = `router.Get("/greeting", func(c *core.Context) *core.Response {
         JsonString := \`{\"message\": \"hello world\"}\`
         return c.Response.Json(JsonString)
 })`
